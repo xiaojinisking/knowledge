@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ReactNative · GitBook</title>
+        <title>React Navigation导航器 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="开发环境搭建.html" />
     
-    
-    <link rel="prev" href="../" />
+    <link rel="prev" href="React-Native布局.html" />
     
 
     </head>
@@ -102,7 +100,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2" data-path="./">
+        <li class="chapter " data-level="1.2" data-path="./">
             
                 <a href="./">
             
@@ -181,7 +179,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="ReactNavigation导航器.html">
+        <li class="chapter active" data-level="1.2.6" data-path="ReactNavigation导航器.html">
             
                 <a href="ReactNavigation导航器.html">
             
@@ -229,7 +227,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ReactNative</a>
+        <a href=".." >React Navigation导航器</a>
     </h1>
 </div>
 
@@ -244,8 +242,31 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="reactnative">ReactNative</h1>
-<p><a href="http://www.devio.org/2016/05/20/React-Native-development-environment-build-Windows-platform/" target="_blank">React&#x5B66;&#x4E60;&#x535A;&#x5BA2;</a>&#xFF1A;<a href="http://www.devio.org" target="_blank">http://www.devio.org</a></p>
+                                <h1 id="react-navigation-&#x5BFC;&#x822A;&#x5668;">React Navigation &#x5BFC;&#x822A;&#x5668;</h1>
+<p><a href="https://reactnavigation.org/docs/zh-Hans/getting-started.html" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<p><a href="https://reactnavigation.org/docs/zh-Hans/api-reference.html" target="_blank">API&#x6587;&#x6863;</a></p>
+<p><a href="http://www.devio.org/2018/05/15/navigator-to-react-navigation/" target="_blank">&#x7B80;&#x4ECB;</a></p>
+<h2 id="&#x5B89;&#x88C5;react-navigation">&#x5B89;&#x88C5;React Navigation</h2>
+<h3 id="&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x5B89;&#x88C5;react-navigation-&#x5305;">&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x5B89;&#x88C5;react-navigation &#x5305;</h3>
+<blockquote>
+<p>yarn add react-navigation</p>
+</blockquote>
+<p>&#x7136;&#x540E;&#x5B89;&#x88C5;&#x7B2C;&#x4E09;&#x65B9;&#x6269;&#x5C55; react-native-gusture-handler.&#x5904;&#x7406;&#x9876;&#x90E8;&#x624B;&#x52BF;</p>
+<blockquote>
+<p>yarn add react-native-gesture-handler</p>
+</blockquote>
+<p>Link&#x6240;&#x6709;&#x90FD;&#x539F;&#x751F;&#x4F9D;&#x8D56;&#xFF0C;&#x56E0;&#x4E3A;react-native-gesture-handler&#x5173;&#x8054;&#x5230;&#x4E86;&#x539F;&#x751F;&#x5E94;&#x7528;</p>
+<blockquote>
+<p>react-native link react-native-gesture-handler</p>
+</blockquote>
+<p><img src="assets/markdown-img-paste-20190223170038865.png" alt=""></p>
+<blockquote>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x5230;&#x539F;&#x751F;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E9B;&#xFF0C;&#x67E5;&#x770B;&#x5B98;&#x65B9;&#x624B;&#x518C;&#x8BF4;&#x660E;</p>
+</blockquote>
+<h2 id="react-navigation-&#x7684;&#x5206;&#x7C7B;">React Navigation &#x7684;&#x5206;&#x7C7B;</h2>
+<ul>
+<li>stack navigator &#x4E3A;&#x5E94;&#x7528;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x5728;&#x5C4F;&#x5E55;&#x4E4B;&#x95F4;&#x5207;&#x6362;&#x5E76;&#x7BA1;&#x7406;&#x5BFC;&#x822A;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x7684;&#x65B9;&#x5F0F;&#x3002; web&#x6D4F;&#x89C8;&#x5668;&#x548C;React Navigation &#x5DE5;&#x4F5C;&#x539F;&#x7406;&#x7684;&#x4E00;&#x4E2A;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x662F;&#xFF1A;React Navigation &#x7684;stack navigator &#x63D0;&#x4F9B;&#x4E86;&#x518D;Android&#x548C;Ios&#x8BBE;&#x5907;&#x4E0A;&#xFF0C;&#x5728;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x8DEF;&#x7531;&#x4E4B;&#x95F4;&#x5BFC;&#x822A;&#x65F6;&#x4F60;&#x671F;&#x671B;&#x7684;&#x624B;&#x52BF;&#x548C;&#x52A8;&#x753B;&#x3002;</li>
+</ul>
 
                                 
                                 </section>
@@ -273,14 +294,10 @@
 
             
                 
-                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                <a href="React-Native布局.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: React-Native布局">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="开发环境搭建.html" class="navigation navigation-next " aria-label="Next page: 开发环境搭建">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -289,7 +306,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReactNative","level":"1.2","depth":1,"next":{"title":"开发环境搭建","level":"1.2.1","depth":2,"path":"ReactNative/开发环境搭建.md","ref":"ReactNative/开发环境搭建.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/README.md","mtime":"2019-02-20T14:13:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T08:36:27.227Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React Navigation导航器","level":"1.2.6","depth":2,"previous":{"title":"React-Native布局","level":"1.2.5","depth":2,"path":"ReactNative/React-Native布局.md","ref":"ReactNative/React-Native布局.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNavigation导航器.md","mtime":"2019-02-24T06:22:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-23T08:36:27.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
