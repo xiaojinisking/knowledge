@@ -6,6 +6,10 @@
 
 [简介](http://www.devio.org/2018/05/15/navigator-to-react-navigation/)
 
+* [createStackNavigator学习指南](http://www.devio.org/2018/12/24/createStackNavigator/)
+* [createDrawerNavigator学习指南](http://www.devio.org/2019/01/20/createDrawerNavigator/)
+* [createMaterialTopTabNavigator学习指南](http://www.devio.org/2019/01/03/createMaterialTopTabNavigator/)
+* [createBottomTabNavigator学习指南](http://www.devio.org/2018/12/30/createBottomNavigator/)
 
 ## 安装React Navigation
 
@@ -13,7 +17,7 @@
 
 >yarn add react-navigation
 
-然后安装第三方扩展 react-native-gusture-handler.处理顶部手势
+然后安装第三方扩展 react-native-gusture-handler.处理顶部tab切换手势
 >yarn add react-native-gesture-handler
 
 Link所有都原生依赖，因为react-native-gesture-handler关联到了原生应用
@@ -25,6 +29,533 @@ Link所有都原生依赖，因为react-native-gesture-handler关联到了原生
 >当使用到原生的时候，还需要配置些，查看官方手册说明
 
 
-## React Navigation 的分类
+## React Navigation 的导航器分类
 
 * stack navigator 为应用提供了一种在屏幕之间切换并管理导航历史记录的方式。 web浏览器和React Navigation 工作原理的一个主要区别是：React Navigation 的stack navigator 提供了再Android和Ios设备上，在堆栈中的路由之间导航时你期望的手势和动画。
+
+* tab navigation 在手机APP中最常用的导航可能就是基于Tab的导航，这可以是页面底部或者标题下方顶部的标签（甚至不要标题）
+* Drawer navigation
+* Switch Navigator  用途是一次只显示一个页面。默认情况下，它是不处理返回操作，并在你切换时将路由重置为默认状态
+
+## 项目引入导航
+navigation 无法直接被使用到页面，需要使用createAppContainer，这里输出了处理完的导航器。
+App.js
+```
+import {AppStackNavigator} from './navigators/AppNavigators'
+import {createAppContainer} from 'react-navigation'
+export default createAppContainer(AppStackNavigator);
+```
+
+index.js  App组件挂载刀根DOM上面
+```
+AppRegistry.registerComponent(appName, () => App);
+```
+
+## statck Navigation 的demo
+
+```
+export const AppStackNavigator = createStackNavigator({
+    HomePage: {
+        screen: Homepage,       //screen表示使用到时哪个页面组件
+    },
+    Page1: {
+        screen: Page1,
+        navigationOptions:({navigation})=>({
+            title:`${navigation.state.params.name}页面名`  //动态配置navigationOption
+        })
+    },
+    Page2:{
+        screen: Page2,
+        navigationOptions:{
+            title:"This is Page2"
+        }
+    },
+    Page3:{
+        screen: Page3,
+        navigationOptions:(props) => {
+            const {navigation}=props;
+            const {state,setParams}=navigation;
+            const {params}=state;
+            return {
+                title:params.title?params.title:"This is Page3",
+                headerRight:(
+                    <Button
+                        title={params.mode==='edit'?'保存':'编辑'}
+                        onPress={()=>setParams({mode:params.mode==='edit'?'':'edit'})}
+                    />
+                )
+            }
+        }
+    },
+    Page4:{
+        screen: Page4,
+        navigationOptions:{
+            title:"This is Page4"
+        }
+    },
+		Bottom:{
+    	screen:AppBottomNavigator,
+			navigationOptions: {
+    		title: 'BottomNavigator'
+			}
+		},
+		Top:{
+			screen:AppTopNavigator,
+			navigationOptions: {
+				title: 'TopNavigator'
+			},
+
+		},DrawerNav:{
+			screen:DrawerNav,
+			navigationOptions:{
+				title:'DrawerNav'
+			}
+		}
+	},
+	{
+    initialRouteName: 'HomePage', // 设置 stack navigator 的默认页面， 必须是路由配置中的某一个
+	}
+);
+```
+---
+
+
+---
+
+Homepage  页面
+[ Navigation的prop的使用](https://reactnavigation.org/docs/zh-Hans/navigation-prop.html)
+
+在内部定义navigationOptions 可以覆盖再创建stackNavigation中当前页面的navigationOptions配置
+
+```
+import React from 'react';
+import {View, Text, Button} from 'react-native';
+
+export default class HomePage extends React.Component {
+
+	//覆盖AppNavigators中的配置
+	static navigationOptions = {
+		title: 'Home Page',
+		headerBackTitle: '返回Home'   //设置返回此页的返回按钮的文案，有长度限制
+	}
+
+	render() {
+		const {navigation} = this.props;
+		return (
+			<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+				<Text>Home Screen1</Text>
+				<Button title={'Go to Page1'} onPress={() => {
+					navigation.navigate('Page1', {name: '动态的'})
+				}}/>
+				<Button title={'Go to Page2'} onPress={() => {
+					navigation.navigate('Page2')
+				}}/>
+				<Button title={'Go to Page3'} onPress={() => {
+					navigation.navigate('Page3', {name: 'Davie'})
+				}}/>
+				<Button title={'Go to Bottom Navigator'} onPress={() => {
+					navigation.navigate('Bottom')
+				}}/>
+				<Button title={'Go to Top Navigator'} onPress={() => {
+					navigation.navigate('Top')
+				}}/>
+				<Button title={'Go to Top DrawerNav'} onPress={() => {
+					navigation.navigate('DrawerNav')
+				}}/>
+			</View>
+		);
+	}
+}
+```
+
+![](assets/markdown-img-paste-20190228141255388.png)
+
+---
+Page1
+
+```
+import React, {Component} from 'react';
+import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+
+export default class Page1 extends Component {
+    render() {
+        const {navigation} = this.props;
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Welcome to Page1!</Text>
+                <Button
+                    title={'Go Back'}
+                    onPress={()=>{
+                        navigation.goBack()
+                    }}
+                />
+                <Button
+                    title={'跳到page4'}
+                    onPress={()=>{
+                        navigation.navigate('Page4')
+                    }}
+                />
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    }
+});
+
+```
+
+![](assets/markdown-img-paste-20190228141235977.png)
+
+
+---
+Page2
+```
+
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+
+export default class Page2 extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Welcome to Page2!</Text>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    }
+});
+
+```
+
+![](assets/markdown-img-paste-20190228141712756.png)
+---
+
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, TextInput} from 'react-native';
+
+export default class Page3 extends Component {
+	render() {
+		const {navigation} = this.props;
+		const {state, setParams} = navigation;
+		const {params} = state;
+		const showText = params && params.mode == 'edit' ? '正在编辑' : '编辑完成';
+
+		return (
+			<View style={styles.container}>
+				<Text style={styles.text}>Welcome to Page3!</Text>
+				<Text style={styles.showText}>{showText}</Text>
+				<TextInput
+					style={styles.input}
+					onChangeText={text => {
+						setParams({title: text})
+					}}
+				/>
+			</View>
+		);
+	}
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		backgroundColor: '#F5FCFF',
+		alignItems: 'center'
+	},
+	text: {
+		fontSize: 20,
+		color: 'black'
+	},
+	showText: {
+		marginTop: 30,
+		fontSize: 20,
+		color: 'blue'
+	},
+	input: {
+		height: 50,
+		marginTop: 10,
+		borderColor: 'black',
+		borderWidth: 1
+	}
+});
+```
+
+![](assets/markdown-img-paste-20190228141954532.png)
+
+
+---
+Page4
+使用了 navigater 的prop中的navigation的方法
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+
+export default class Page4 extends Component {
+    render() {
+    	const {navigation} = this.props;
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Welcome to Page4!</Text>
+								<Button title={'Open Drawer'} onPress={()=>navigation.openDrawer()}/>
+								<Button title={'Close Drawer'} onPress={()=>navigation.closeDrawer()}/>
+								<Button title={'Toggle Drawer'} onPress={()=>navigation.toggleDrawer()}/>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    }
+});
+
+```
+
+![](assets/markdown-img-paste-20190228142308168.png)
+
+---
+
+page5
+
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+
+export default class Page5 extends Component{
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>Welcome to Page5!</Text>
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    }
+});
+```
+
+---
+### topTabNavigator
+
+顶部tab切换
+```
+const AppTopNavigator = createMaterialTopTabNavigator({
+	Page1 : {
+		screen: Page1,
+		navigationOptions: {
+			tabBarLabel: 'All'
+		}
+	},
+	Page2 : {
+		screen: Page2,
+		navigationOptions: {
+			tabBarLabel: 'ios'
+		}
+	},
+	Page3:{
+		screen: Page3,
+		navigationOptions:{
+			tabBarLabel: 'React'
+		}
+	},
+	Page4:{
+		screen: Page4,
+		navigationOptions:{
+			tabBarLabel: 'React Native'
+		}
+	},
+	Page5:{
+		screen: Page5,
+		navigationOptions:{
+			tabBarLabel: 'devio'
+		}
+	}
+},{
+	tabBarOptions:{
+		tabStyle:{mindWidth:50},
+		upperCaseLabel:false,	//是否使用标签大写，默认为true
+		scrollEnabled:true, //是否支持 选项卡滚动，默认为false
+		style:{
+			backgroundColor:'#678'	//Tab的背景色
+		},
+		indicatorStyle:{
+			height:2,
+			backgroundColor: 'white'
+		},//标签指示器样式
+		labelStyle:{
+			fontSize:13,
+			marginTop: 6,
+			marginBottom: 6
+		}//文字的样式
+	}
+});
+```
+
+
+![](assets/markdown-img-paste-20190228142745237.png)
+
+---
+### bottomTabNavigator
+底部导航
+```
+const AppBottomNavigator = createBottomTabNavigator({
+	Page1 : {
+		screen: Page1,
+		navigationOptions: {
+			tabBarLabel: '最热',
+			tabBarIcon: ({tintColor,focused})=>(
+				<Ionicons
+					name={'ios-home'}
+					size={26}
+					style={{color:tintColor}}
+					/>
+			)
+		}
+	},
+	Page2 : {
+		screen: Page2,
+		navigationOptions: {
+			tabBarLabel: '趋势',
+			tabBarIcon: ({tintColor,focused})=>(
+				<Ionicons
+					name={'ios-people'}
+					size={26}
+					style={{color:tintColor}}
+				/>
+			)
+		}
+	},
+	Page3:{
+		screen: Page3,
+		navigationOptions:{
+			tabBarLabel: '收藏',
+			tabBarIcon: ({tintColor,focused})=>(
+				<Ionicons
+					name={'ios-chatboxes'}
+					size={26}
+					style={{color:tintColor}}
+				/>
+			)
+		}
+	},
+	Page4:{
+		screen: Page4,
+		navigationOptions:{
+			tabBarLabel: '我的',
+			tabBarIcon: ({tintColor,focused})=>(
+				<Ionicons
+					name={'ios-aperture'}
+					size={26}
+					style={{color:tintColor}}
+				/>
+			)
+		}
+	}
+},{
+	tabBarOptions:{
+		activeTintColor : Platform.OS === 'ios' ? '#e91e63' : '#fff'
+	}
+})
+```
+
+![](assets/markdown-img-paste-20190228142956205.png)
+
+### DrawerNav 抽屉导航
+
+```
+const DrawerNav=createDrawerNavigator({
+	Page4: {
+		screen: Page4,
+		navigationOptions: {
+			drawerLabel: 'Page4',
+			drawerIcon:({tintColor}) => {
+				return <MaterialIcons
+									name={'drafts'}
+									size={24}
+									style={{color:tintColor}}
+							/>
+			}
+		}
+	},
+	Page5: {
+		screen: Page5,
+		navigationOptions: {
+			drawerLabel: 'Page5',
+			drawerIcon:({tintColor}) => {
+				return <MaterialIcons
+					name={'move-to-inbox'}
+					size={24}
+					style={{color:tintColor}}
+				/>
+			}
+		}
+	}
+},{
+	initialRouteName: 'Page4',
+	contentOptions:{
+		activeTintColor: '#e91e63'
+	},
+	contentComponent:(props)=>(
+		<ScrollView
+			style={{backgroundColor:'#789',flex:1}}
+		>
+			<SafeAreaView
+				forceInset={{top:'always',horizontal:'never'}}
+			>
+				<DrawerItems {...props} />
+			</SafeAreaView>
+
+		</ScrollView>
+	)
+})
+
+```
+
+
+![](assets/markdown-img-paste-20190228143445994.png)
