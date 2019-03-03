@@ -2,6 +2,10 @@
   "plugins": [
     "chapter-fold",
     "back-to-top-button",
-    "expandable-chapters-small"
+    "expandable-chapters-small",
+    "copy-code-button",
+    "emphasize",
+    "page-treeview",
+    "page-toc-button"
   ]
 }

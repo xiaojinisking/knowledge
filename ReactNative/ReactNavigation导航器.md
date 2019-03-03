@@ -35,7 +35,7 @@ Link所有都原生依赖，因为react-native-gesture-handler关联到了原生
 
 * tab navigation 在手机APP中最常用的导航可能就是基于Tab的导航，这可以是页面底部或者标题下方顶部的标签（甚至不要标题）
 * Drawer navigation
-* Switch Navigator  用途是一次只显示一个页面。默认情况下，它是不处理返回操作，并在你切换时将路由重置为默认状态
+* Switch Navigator  用途是一次只显示一个页面。默认情况下，它是不处理返回操作，并在你切换时将路由重置为默认状态,比如应用场景的跳转。
 
 ## 项目引入导航
 navigation 无法直接被使用到页面，需要使用createAppContainer，这里输出了处理完的导航器。
@@ -254,6 +254,10 @@ const styles = StyleSheet.create({
 
 ![](assets/markdown-img-paste-20190228141712756.png)
 ---
+
+Page3
+
+![](assets/markdown-img-paste-20190228205645266.png)
 
 ```
 import React, {Component} from 'react';
@@ -559,3 +563,71 @@ const DrawerNav=createDrawerNavigator({
 
 
 ![](assets/markdown-img-paste-20190228143445994.png)
+
+### switch navigator
+
+```
+const AuthStack = createStackNavigator({
+	Login: {
+		screen: Login
+	}
+},{
+	navigationOptions:{
+		//header: null,//可以通过将header设为null来禁用StackNavigator的Navigation Bar
+	}
+});
+
+
+//新入口
+export default createSwitchNavigator(
+	{
+		Auth:AuthStack,         //为一次性页面
+		App:AppStackNavigator   //为上面demo的公共入库
+	},
+	{
+		initialRouteName: 'Auth',
+	}
+)
+```
+
+Login页面
+```
+import React, {Component} from 'react';
+import {Button, Platform, StyleSheet, Text, View} from 'react-native';
+
+export default class Login extends Component{
+    render() {
+        const {navigation} = this.props;
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>登录页!</Text>
+                <Button
+                    title={'Login'}
+                    onPress={()=>{
+                        navigation.navigate('App')
+                    }}
+                />
+            </View>
+        );
+    }
+}
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    welcome: {
+        fontSize: 20,
+        textAlign: 'center',
+        margin: 10,
+    }
+});
+```
+
+
+![](assets/markdown-img-paste-20190228204036575.png)
+
+![](assets/markdown-img-paste-2019022820391146.png)
