@@ -452,6 +452,7 @@
 <li><div><a href="#&#x5217;&#x8868;&#x5206;&#x7C7B;">&#x5217;&#x8868;&#x5206;&#x7C7B;</a><i></i></div></li>
 <li><div><a href="#flatlist">FlatList</a><i></i></div></li>
 <li><div><a href="#swipeableflatlist">SwipeableFlatList</a><i></i></div></li>
+<li><div><a href="#sectionlist-&#x5E26;&#x6709;&#x5206;&#x7EC4;&#x7C7B;&#x533A;-&#x529F;&#x80FD;&#x7684;&#x5217;&#x8868;">SectionList &#x5E26;&#x6709;&#x5206;&#x7EC4;/&#x7C7B;/&#x533A; &#x529F;&#x80FD;&#x7684;&#x5217;&#x8868;</a><i></i></div></li>
 </ul></li>
 </ul>
 </div>
@@ -612,8 +613,10 @@ const styles = StyleSheet.create({
         margin:10
     }
 });
-</code></pre><p><img src="https://github.com/xiaojinisking/knowledge/tree/master/assets/screencast-Genymotion-2019-03-03_16.25.32.958.gif" alt=""></p>
+</code></pre><p><img src="https://github.com/xiaojinisking/knowledge/blob/master/assets/screencast-Genymotion-2019-03-03_16.25.32.958.gif?raw=true" alt=""></p>
 <h2 id="swipeableflatlist">SwipeableFlatList</h2>
+<p>&#x5E26;&#x4FA7;&#x6ED1;&#x83DC;&#x5355;</p>
+<p><a href="https://www.jianshu.com/p/68f9d59bf437" target="_blank">&#x4E00;&#x4E9B;&#x53C2;&#x8003;&#x535A;&#x5BA2;</a></p>
 <p>demo</p>
 <pre><code>import React, {Component} from &apos;react&apos;;
 import {
@@ -779,7 +782,160 @@ const styles = StyleSheet.create({
         width:200
     }
 });
-</code></pre>
+</code></pre><p><img src="https://github.com/xiaojinisking/knowledge/blob/master/assets/screencast-Genymotion-2019-03-03_16.59.33.025.gif?raw=true" alt=""></p>
+<h2 id="sectionlist-&#x5E26;&#x6709;&#x5206;&#x7EC4;&#x7C7B;&#x533A;-&#x529F;&#x80FD;&#x7684;&#x5217;&#x8868;">SectionList &#x5E26;&#x6709;&#x5206;&#x7EC4;/&#x7C7B;/&#x533A; &#x529F;&#x80FD;&#x7684;&#x5217;&#x8868;</h2>
+<p><a href="https://reactnative.cn/docs/sectionlist/" target="_blank">&#x6587;&#x6863;&#x5730;&#x5740;</a></p>
+<ul>
+<li>demo</li>
+</ul>
+<pre><code>import React, {Component} from &apos;react&apos;;
+import {
+    Platform,
+    StyleSheet,
+    Text,
+    View,
+    Button,
+    SectionList,
+    RefreshControl,
+    ActivityIndicator
+} from &apos;react-native&apos;;
+
+type Props = {};
+const CITY_NAMES=[{data:[&apos;&#x5317;&#x4EAC;&apos;,&apos;&#x4E0A;&#x6D77;&apos;,&apos;&#x5E7F;&#x5DDE;&apos;,&apos;&#x6DF1;&#x5733;&apos;],title:&apos;&#x4E00;&#x7EBF;&apos;},{data:[&apos;&#x676D;&#x5DDE;&apos;,&apos;&#x82CF;&#x5DDE;&apos;,&apos;&#x6210;&#x90FD;&apos;,&apos;&#x6B66;&#x6C49;&apos;,&apos;&#x90D1;&#x5DDE;&apos;],title:&apos;&#x4E8C;&#x7EBF;&apos;},{data:[&apos;&#x6D1B;&#x9633;&apos;,&apos;&#x53A6;&#x95E8;&apos;,&apos;&#x9752;&#x5C9B;&apos;,&apos;&#x62C9;&#x8428;&apos;],&apos;title&apos;:&apos;&#x4E09;&#x7EBF;&#x57CE;&#x5E02;&apos;}];
+export default class SectionListDemo extends Component&lt;Props&gt; {
+    constructor(props){
+        super(props);
+        this.state = {
+            isLoading:false,
+            dataArray:CITY_NAMES
+        }
+    }
+
+    loadData(refreshing){
+        if(refreshing){
+            this.setState({
+                isLoading:true
+            });
+        }
+        setTimeout(()=&gt;{
+            let dataArray = [];
+            if(refreshing){
+                for(let i = this.state.dataArray.length-1;i&gt;=0;i--){
+                    dataArray.push(this.state.dataArray[i]);
+                }
+            }else{
+                // dataArray  = this.state.dataArray.concat(CITY_NAMES)
+                dataArray  = [...this.state.dataArray, ...CITY_NAMES]
+            }
+            this.setState({
+                // dataArray:[...this.state.dataArray,...dataArray],
+                dataArray:dataArray,
+                isLoading:false
+            })
+        },2000)
+    }
+
+    _renderItem(data){
+        return (
+            &lt;View style={styles.item}&gt;
+                &lt;Text style={styles.text}&gt;{data.item}&lt;/Text&gt;
+            &lt;/View&gt;
+        )
+    }
+
+    genIndicator(){
+        return &lt;View style={styles.indicatorContainer}&gt;
+            &lt;ActivityIndicator
+                style={styles.indicator}
+                size={&apos;large&apos;}
+                color={&apos;red&apos;}
+                animating={true}
+            /&gt;
+            &lt;Text&gt;&#x6B63;&#x5728;&#x52A0;&#x8F7D;&#x66F4;&#x591A;&lt;/Text&gt;
+        &lt;/View&gt;
+    }
+
+    _renderSectionHeader({section}){
+        return &lt;View style={styles.sectionHeader}&gt;
+            &lt;Text&gt;{section.title}&lt;/Text&gt;
+        &lt;/View&gt;
+    }
+
+  render() {
+    return (
+      &lt;View style={styles.container}&gt;
+                &lt;SectionList
+                    sections={this.state.dataArray}
+                    renderItem={(data)=&gt;this._renderItem(data)}
+                    keyExtractor={(item,index) =&gt; (index)}
+                    // refreshing={this.state.isLoading}
+                    // onRefresh={()=&gt;{
+                    //     this.loadData()
+                    // }}
+                    refreshControl={    //&#x81EA;&#x5B9A;&#x4E49;&#x4E0A;&#x62C9;&#x5237;&#x9009;
+                        &lt;RefreshControl
+                            title={&apos;Loading&apos;}
+                            colors={[&apos;#f0f&apos;]}
+                            titleColor={&apos;red&apos;}
+                            tintColor={&apos;orange&apos;}
+                            refreshing={this.state.isLoading}
+                            onRefresh={()=&gt;{
+                                this.loadData(true)
+                            }}
+                        /&gt;
+                    }
+
+                    ListFooterComponent={()=&gt;this.genIndicator()}    //&#x4E0B;&#x62C9;&#x52A0;&#x8F7D;&#x6548;&#x679C;
+                    onEndReached={()=&gt;{
+                        this.loadData();
+                    }}
+                    renderSectionHeader={(data)=&gt;this._renderSectionHeader(data)}
+                    ItemSeparatorComponent={()=&gt;&lt;View style={styles.separator}/&gt;}    //item&#x4E4B;&#x95F4;&#x7684;&#x5206;&#x5272;&#x7EBF;
+                /&gt;
+      &lt;/View&gt;
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+
+    backgroundColor: &apos;#fafafa&apos;,
+  },
+  item:{
+        height:80,
+        // marginRight:15,
+        // marginLeft:15,
+        marginBottom:15,
+        alignItems: &apos;center&apos;,
+        justifyContent: &apos;center&apos;
+    },
+    text:{
+        color: &apos;black&apos;,
+        fontSize: 20
+    },
+    indicatorContainer:{
+      alignItems: &apos;center&apos;
+    },
+    indicator:{
+      color: &apos;red&apos;,
+        margin:10
+    },
+    sectionHeader:{
+      height:50,
+        backgroundColor:&apos;#93ebbe&apos;,
+        alignItems:&apos;center&apos;,
+        justifyContent: &apos;center&apos;
+    },
+    separator:{
+        height:1,
+        backgroundColor:&apos;gray&apos;,
+        flex:1
+    }
+});
+</code></pre><p><img src="https://github.com/xiaojinisking/knowledge/blob/master/assets/screencast-Genymotion-2019-03-03_17.00.35.056.gif?raw=true" alt=""></p>
+
                                 
                                 </section>
                             
@@ -822,7 +978,7 @@ const styles = StyleSheet.create({
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReactNative列表组件","level":"2.2.7","depth":2,"next":{"title":"React Navtive导航器","level":"2.2.8","depth":2,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[{"title":"React Navigation导航器","level":"2.2.8.1","depth":3,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[]}]},"previous":{"title":"React-Native布局","level":"2.2.6","depth":2,"path":"ReactNative/React-Native布局.md","ref":"ReactNative/React-Native布局.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNative列表.md","mtime":"2019-03-03T08:47:35.875Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T03:18:38.541Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ReactNative列表组件","level":"2.2.7","depth":2,"next":{"title":"React Navtive导航器","level":"2.2.8","depth":2,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[{"title":"React Navigation导航器","level":"2.2.8.1","depth":3,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[]}]},"previous":{"title":"React-Native布局","level":"2.2.6","depth":2,"path":"ReactNative/React-Native布局.md","ref":"ReactNative/React-Native布局.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNative列表.md","mtime":"2019-03-03T09:05:20.099Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T03:18:38.541Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
