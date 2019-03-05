@@ -631,3 +631,380 @@ const styles = StyleSheet.create({
 ![](assets/markdown-img-paste-20190228204036575.png)
 
 ![](assets/markdown-img-paste-2019022820391146.png)
+
+
+## 常见问题
+
+* 导航器嵌套，无法跳转到外层导航器的解决方案
+  比如：我们在home导航器定义了很多路由，但是在首页我们新增了一个底部Tab导航器，导航到Tab对应的页面。那么这些Tab对应的页面就是嵌套的导航器Tab导航器创建的，当在tab页面想调整到，最外层home导航器导航到页面时，使用this.props获取到navigation则是 tab导航器的是，而不是外层导航器的。
+
+  这里提供一个解决方案，在创建Tab导航器之前我们将当时的this.props.navigation 存储起来，下次需要调home导航器的页面则可以使用他来跳转
+
+```
+export default class HomePage extends Component<Props> {
+
+	_tabNavigator() {
+		return createAppContainer(createBottomTabNavigator({
+			PopularPage: {
+				screen: PopularPage,
+				navigationOptions: {
+					tabBarLabel: '最热',
+					tabBarIcon: ({tintColor, focused}) => (
+						<MaterialIcons
+							name={'whatshot'}
+							size={26}
+							style={{color: tintColor}}
+						/>
+					)
+				}
+			},
+			TrendingPage: {
+				screen: TrendingPage,
+				navigationOptions: {
+					tabBarLabel: '趋势',
+					tabBarIcon: ({tintColor, focused}) => (
+						<Ionicons
+							name={'md-trending-up'}
+							size={26}
+							style={{color: tintColor}}
+						/>
+					)
+				}
+			},
+			FavoritePage: {
+				screen: FavoritePage,
+				navigationOptions: {
+					tabBarLabel: '收藏',
+					tabBarIcon: ({tintColor, focused}) => (
+						<MaterialIcons
+							name={'favorite'}
+							size={26}
+							style={{color: tintColor}}
+						/>
+					)
+				}
+			},
+			MyPage: {
+				screen: MyPage,
+				navigationOptions: {
+					tabBarLabel: '我的',
+					tabBarIcon: ({tintColor, focused}) => (
+						<Entypo
+							name={'user'}
+							size={26}
+							style={{color: tintColor}}
+						/>
+					)
+				}
+			}
+		}));
+	}
+
+	render() {
+
+		NavigationUtil.navigation = this.props.navigation;			//再创建下面的Tabnavigator之前将之前的navigation保存起来。这样避免在tabNavigation导航的页面无法调整之前的navigation.跳转之前的就使用存储在NavigationUtil内的
+
+		const Tab = this._tabNavigator();
+
+		return <Tab/>
+	}
+}
+```
+
+
+## 高级用法
+### 创建动态底部导航器，及可配置的导航器
+
+底部导航的属性tabBarComponent  来重写组件的样式，
+需要引入import {BottomTabBar} from 'react-navigation-tabs'。注意他就是react-navigation 继承的底部组件。
+
+
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View} from 'react-native';
+import {createBottomTabNavigator, createAppContainer} from 'react-navigation';
+import PopularPage from '../page/PopularPage';
+import FavoritePage from '../page/FavoritePage';
+import TrendingPage from '../page/TrendingPage';
+import MyPage from '../page/MyPage';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+import NavigationUtil from "../navigator/NavigationUtil";
+import {BottomTabBar} from 'react-navigation-tabs';
+
+type Props = {};
+
+const TABS = {
+	PopularPage: {
+		screen: PopularPage,
+		navigationOptions: {
+			tabBarLabel: '最热',
+			tabBarIcon: ({tintColor, focused}) => (
+				<MaterialIcons
+					name={'whatshot'}
+					size={26}
+					style={{color: tintColor}}
+				/>
+			)
+		}
+	},
+	TrendingPage: {
+		screen: TrendingPage,
+		navigationOptions: {
+			tabBarLabel: '趋势',
+			tabBarIcon: ({tintColor, focused}) => (
+				<Ionicons
+					name={'md-trending-up'}
+					size={26}
+					style={{color: tintColor}}
+				/>
+			)
+		}
+	},
+	FavoritePage: {
+		screen: FavoritePage,
+		navigationOptions: {
+			tabBarLabel: '收藏',
+			tabBarIcon: ({tintColor, focused}) => (
+				<MaterialIcons
+					name={'favorite'}
+					size={26}
+					style={{color: tintColor}}
+				/>
+			)
+		}
+	},
+	MyPage: {
+		screen: MyPage,
+		navigationOptions: {
+			tabBarLabel: '我的',
+			tabBarIcon: ({tintColor, focused}) => (
+				<Entypo
+					name={'user'}
+					size={26}
+					style={{color: tintColor}}
+				/>
+			)
+		}
+	}
+}
+
+
+export default class DynamicTabNavigator extends Component<Props> {
+	constructor(props) {
+		super(props);
+		console.disableYellowBox = true;
+	}
+
+
+	_tabNavigator() {
+		const {PopularPage, TrendingPage, FavoritePage, MyPage} = TABS;
+		const tabs = {PopularPage, TrendingPage, FavoritePage, MyPage}	//根据需要定制显示的tab
+		PopularPage.navigationOptions.tabBarLabel = '最新';		//动态修改tab的名称
+		return createAppContainer(createBottomTabNavigator(tabs, {
+			tabBarComponent: TabBarComponent
+		}));
+	}
+
+	render() {
+
+		NavigationUtil.navigation = this.props.navigation;			//再创建下面的Tabnavigator之前将之前的navigation保存起来。这样避免在tabNavigation导航的页面无法调整之前的navigation.跳转之前的就使用存储在NavigationUtil内的
+
+		const Tab = this._tabNavigator();
+
+		return <Tab/>
+	}
+}
+
+
+//自定义底部组件 BottomTabBar 为reactNavigation 底层的底部tab组件
+class TabBarComponent extends React.Component {
+	constructor(props) {
+		super(props);
+		this.theme = {
+			tintColor: props.activateTintColor,
+			updateTime: new Date().getTime()
+		}
+	}
+
+	render() {
+		const {routes, index} = this.props.navigation.state;
+		if (routes[index].params) {
+			const {theme} = routes[index].params;
+			if (theme && theme.updateTime > this.theme.updateTime) {
+				this.theme = theme;
+			}
+		}
+		return <BottomTabBar
+			{...this.props}
+			activeTintColor={this.theme.tintColor || this.props.activeTintColor}
+		/>
+	}
+
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
+	},
+	welcome: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+	},
+});
+
+```
+
+设置颜色页面
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+
+type Props = {};
+export default class TrendingPage extends Component<Props> {
+	render() {
+		const {navigation} =this.props;
+		return (
+			<View style={styles.container}>
+				<Text style={styles.welcome}>TrendingPage</Text>
+				<Button title="改变主题色" onPress={
+					()=>{
+						navigation.setParams({
+							theme:{
+								tintColor: 'red',
+								updateTime: new Date().getTime()
+							}
+						})
+					}
+				}/>
+			</View>
+		);
+	}
+}
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
+	},
+	welcome: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+	},
+});
+
+```
+
+![](assets/markdown-img-paste-20190305211552871.png)
+
+### 动态配置顶部tab
+
+原理就是 动态构建RouteConfigs 参数
+
+注意下这里动态给页面传递参数的技巧
+
+```
+import React, {Component} from 'react';
+import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import {
+	createMaterialTopTabNavigator,
+	createAppContainer
+} from 'react-navigation'
+import NavigationUtil from '../navigator/NavigationUtil';
+
+type Props = {};
+export default class PopularPage extends Component<Props> {
+
+	constructor(props) {
+		super(props);
+		this.tabNames = ['Java', 'Android', 'ios', 'React', 'React Native', 'php'];
+	}
+
+	_genTabs() {
+		const tabs = {};
+		this.tabNames.forEach((item, index) => {
+			tabs[`tab${index}`] = {
+				// screen: PopularTab,
+				screen: props => <PopularTab {...props} tableLabel={item}/>,		//实现初始化时传参
+				navigationOptions: {
+					title: item
+				}
+			}
+		})
+		return tabs;
+	}
+
+	render() {
+		const TabNavigator = createAppContainer(createMaterialTopTabNavigator(this._genTabs(), {
+			tabBarOptions: {
+				tabStyle: styles.tabStyles,
+				upperCaseLabel: false,	//是否使用标签大写，默认为true
+				scrollEnabled: true,		//是否支持选项卡滚动，默认为false
+				style:{
+					backgroundColor: '#678'
+				},
+				indicatorStyle:styles.indicatorStyle,	//标签指示器的样式
+				labelStyle:styles.labelStyle,	//文字的样式
+			}
+		}));
+
+
+		return <View style={{flex: 1, marginTop: 30}}>
+			<TabNavigator/>
+		</View>
+
+	}
+}
+
+class PopularTab extends Component<Props> {
+	render() {
+		const {tableLabel} = this.props;
+		return (
+			<View style={styles.container}>
+				<Text style={styles.welcome}>{tableLabel}</Text>
+				<Text onPress={() => {
+					NavigationUtil.goPage({
+						navigation: this.props.navigation
+					}, "DetailPage")
+				}}>跳转到详情页</Text>
+			</View>
+		);
+	}
+}
+
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center',
+		backgroundColor: '#F5FCFF',
+	},
+	welcome: {
+		fontSize: 20,
+		textAlign: 'center',
+		margin: 10,
+	},
+	tabStyles: {
+		minWidth: 50
+	},
+	indicatorStyle:{
+		height: 2,
+		backgroundColor:"white"
+	},
+	labelStyle:{
+		fontSize: 13,
+		marginTop: 16,
+		marginBottom:6
+	}
+});
+
+```

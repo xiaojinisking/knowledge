@@ -1,6 +1,19 @@
 # React Native 列表组件
+ListView 已经被淘汰，取代的是FlatList，因为ListView性能太差了，当大量的数据需要展示的时候，ListView对内存的占用太大了。
 
-## 列表分类
+在RN0.43版本中引入了FlatList,SectionList与VirtualzedList，其中VirtualzedList是FlatList与sectionList的底层
+
+新List的底层原理区别
+* ListView :
+  ListView对列表中的Item是全量渲染的，并且没有复制机制，这就难以避免当让ListView渲染大数据量时出现下面的情况：
+  * 第一次打开与切换Tab时会出现卡顿和白屏的情况：这是因为ListView对所有都Item都是全量渲染的，比如：ListView中有100条Item，只有等这100条Item都渲染晚餐，ListView中的内容才展示，这就难免会出现白屏的问题。
+  * 滑动列表时会出现卡顿和不跟手：这是因为大数据量时ListView占用了大量的内存和计算，对手机资源是一个很大的消耗，尤其是一些低端机上甚至会出现OOM；
+
+* VirtuanlizedList
+  VirtualzedList是FlatList和SectionList的底层实现。VirtualzedList通过维护一个有效的渲染窗口（其中包含可见的元素），并将渲染窗口之外的元素全部用合适的定长空白空间代替的方式，极大的改善了内存的消耗以及在有大量数据情况下单使用性能。这个渲染窗口能响应滚动行动。当一个元素离可视区域太远时，它就有一个较低端优先级；否则就获取一个较高的优先级。渲染窗口通过这种方式逐步渲染其中的元素（在进行了任何交互之后），以尽量减少出现空白区域的可能性。
+
+![](assets/markdown-img-paste-20190303173703175.png)
+ 列表分类
 
 * FlatList  高性能简单列表组件
 * SwipeableFlatList  是FlatList的升级，带有测滑功能

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>ReactNative · GitBook</title>
+        <title>ReactNative与Redux整合 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="开发环境搭建.html" />
+    <link rel="next" href="调试.html" />
     
     
-    <link rel="prev" href="../React/Redux.html" />
+    <link rel="prev" href="ReactNavigation导航器.html" />
     
 
     </head>
@@ -217,7 +217,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="./">
+        <li class="chapter " data-level="2.4" data-path="./">
             
                 <a href="./">
             
@@ -283,7 +283,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.4.5" data-path="ReactNative与Redux整合.html">
+        <li class="chapter active" data-level="2.4.5" data-path="ReactNative与Redux整合.html">
             
                 <a href="ReactNative与Redux整合.html">
             
@@ -470,7 +470,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >ReactNative</a>
+        <a href=".." >ReactNative与Redux整合</a>
     </h1>
 </div>
 
@@ -486,13 +486,35 @@
                                 <section class="normal markdown-section">
                                 
                                 <div class="treeview__container"><ul>
-<li><div><a href="#reactnative">ReactNative</a><i></i></div></li>
+<li><div><a href="#&#x5982;&#x4F55;&#x5728;reactnative-&#x4E2D;&#x4F7F;&#x7528;redux">&#x5982;&#x4F55;&#x5728;ReactNative &#x4E2D;&#x4F7F;&#x7528;Redux</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a><i></i></div></li>
+<li><div><a href="#react-native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation-&#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;">React Native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation &#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;</a><i></i></div></li>
+</ul></li>
 </ul>
 </div>
 
-<h1 id="reactnative">ReactNative</h1>
-<p><a href="http://www.devio.org/2016/05/20/React-Native-development-environment-build-Windows-platform/" target="_blank">React&#x5B66;&#x4E60;&#x535A;&#x5BA2;</a>&#xFF1A;<a href="http://www.devio.org" target="_blank">http://www.devio.org</a></p>
-<p><a href="https://github.com/crazycodeboy/RNStudyNotes" target="_blank">github</a></p>
+<h1 id="&#x5982;&#x4F55;&#x5728;reactnative-&#x4E2D;&#x4F7F;&#x7528;redux">&#x5982;&#x4F55;&#x5728;ReactNative &#x4E2D;&#x4F7F;&#x7528;Redux</h1>
+<h2 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
+<p>&#x6839;&#x636E;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5982;&#x4E0B;&#x7EC4;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>redux(&#x5FC5;&#x9009;)</li>
+<li>redux-redux(&#x5FC5;&#x9009;)&#xFF1A;redux&#x4F5C;&#x8005;&#x4E3A;&#x65B9;&#x4FBF;&#x5728;react&#x4E0A;&#x4F7F;&#x7528;redux&#x5F00;&#x53D1;&#x7684;&#x4E00;&#x4E2A;&#x7528;&#x5728;redux&#x4E0A;&#x7684;redux&#x5E93;</li>
+<li>redux-devtools(&#x53EF;&#x9009;)&#xFF1A;Redux&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x652F;&#x6301;&#x70ED;&#x52A0;&#x8F7D;&#x3001;action&#x91CD;&#x653E;&#x3001;&#x81EA;&#x5B9A;&#x4E49;UI&#x7B49;&#x529F;&#x80FD;</li>
+<li>redux-thunk:&#x5B9E;&#x73B0;action&#x5F02;&#x6B65;&#x7684;middleware</li>
+<li>redux-persist(&#x53EF;&#x9009;)&#xFF1A;&#x652F;&#x6301;store&#x672C;&#x5730;&#x6301;&#x4E45;&#x5316;</li>
+<li>redux-obsevable(&#x53EF;&#x9009;)&#xFF1A;&#x5B9E;&#x73B0;&#x53EF;&#x53D6;&#x6D88;&#x7684;action</li>
+</ul>
+<pre><code>yarn add redux
+yarn add react-redux
+yarn add redux-devtools
+</code></pre><p><a href="http://cn.redux.js.org/docs/react-redux/" target="_blank">react-redux&#x6587;&#x6863;</a></p>
+<h2 id="react-native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation-&#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;">React Native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation &#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;</h2>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;react-navigation-redux-helpers&#xFF0C;&#x8FD9;&#x4E2A;&#x5305;&#x5141;&#x8BB8;&#x901A;&#x8FC7;redux&#x6765;&#x7BA1;&#x7406;react navigation&#x7684;state</li>
+</ul>
+<pre><code>npm install --save react-navigation-redux-helpers
+</code></pre><p><a href="https://github.com/react-navigation/react-navigation-redux-helpers" target="_blank">github&#x5730;&#x5740;</a></p>
 
                                 
                                 </section>
@@ -520,12 +542,12 @@
 
             
                 
-                <a href="../React/Redux.html" class="navigation navigation-prev " aria-label="Previous page: Redux">
+                <a href="ReactNavigation导航器.html" class="navigation navigation-prev " aria-label="Previous page: ReactNavtive导航器">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="开发环境搭建.html" class="navigation navigation-next " aria-label="Next page: 开发环境搭建">
+                <a href="调试.html" class="navigation navigation-next " aria-label="Next page: ReactNative调试">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -536,7 +558,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReactNative","level":"2.4","depth":1,"next":{"title":"开发环境搭建","level":"2.4.1","depth":2,"path":"ReactNative/开发环境搭建.md","ref":"ReactNative/开发环境搭建.md","articles":[]},"previous":{"title":"Redux","level":"2.3.3","depth":2,"path":"React/Redux.md","ref":"React/Redux.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/README.md","mtime":"2019-02-28T07:02:30.633Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T03:18:38.541Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ReactNative与Redux整合","level":"2.4.5","depth":2,"next":{"title":"ReactNative调试","level":"2.4.6","depth":2,"path":"ReactNative/调试.md","ref":"ReactNative/调试.md","articles":[]},"previous":{"title":"ReactNavtive导航器","level":"2.4.4","depth":2,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNative与Redux整合.md","mtime":"2019-03-05T15:19:40.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-03T03:18:38.541Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
