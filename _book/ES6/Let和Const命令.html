@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>react基础知识 · GitBook</title>
+        <title>Let和Const命令 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -81,10 +81,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Redux.html" />
+    <link rel="next" href="../Webpack/" />
     
     
-    <link rel="prev" href="Es6,Es7,Es8介绍.html" />
+    <link rel="prev" href="项目构建.html" />
     
 
     </head>
@@ -133,9 +133,9 @@
         
         
     
-        <li class="chapter " data-level="2.1" data-path="../ES6/">
+        <li class="chapter " data-level="2.1" data-path="./">
             
-                <a href="../ES6/">
+                <a href="./">
             
                     
                     ES6
@@ -147,9 +147,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.1" data-path="../ES6/项目构建.html">
+        <li class="chapter " data-level="2.1.1" data-path="项目构建.html">
             
-                <a href="../ES6/项目构建.html">
+                <a href="项目构建.html">
             
                     
                     项目构建
@@ -160,9 +160,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.2" data-path="../ES6/Let和Const命令.html">
+        <li class="chapter active" data-level="2.1.2" data-path="Let和Const命令.html">
             
-                <a href="../ES6/Let和Const命令.html">
+                <a href="Let和Const命令.html">
             
                     
                     Let和Const命令
@@ -191,9 +191,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="./">
+        <li class="chapter " data-level="2.3" data-path="../React/">
             
-                <a href="./">
+                <a href="../React/">
             
                     
                     React
@@ -205,9 +205,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.3.1" data-path="Es6,Es7,Es8介绍.html">
+        <li class="chapter " data-level="2.3.1" data-path="../React/Es6,Es7,Es8介绍.html">
             
-                <a href="Es6,Es7,Es8介绍.html">
+                <a href="../React/Es6,Es7,Es8介绍.html">
             
                     
                     Es6,Es7,Es8介绍
@@ -218,9 +218,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3.2" data-path="react基础知识.html">
+        <li class="chapter " data-level="2.3.2" data-path="../React/react基础知识.html">
             
-                <a href="react基础知识.html">
+                <a href="../React/react基础知识.html">
             
                     
                     react基础知识
@@ -231,9 +231,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3.3" data-path="Redux.html">
+        <li class="chapter " data-level="2.3.3" data-path="../React/Redux.html">
             
-                <a href="Redux.html">
+                <a href="../React/Redux.html">
             
                     
                     Redux
@@ -521,7 +521,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >react基础知识</a>
+        <a href=".." >Let和Const命令</a>
     </h1>
 </div>
 
@@ -537,13 +537,31 @@
                                 <section class="normal markdown-section">
                                 
                                 <div class="treeview__container"><ul>
-<li><div><a href="#react&#x57FA;&#x7840;&#x77E5;&#x8BC6;">React&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a><i></i></div></li>
+<li><div><a href="#let&#x548C;const&#x547D;&#x4EE4;">Let&#x548C;Const&#x547D;&#x4EE4;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;">&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</a><i></i></div></li>
+<li><div><a href="#let&#x547D;&#x4EE4;">Let&#x547D;&#x4EE4;</a><i></i></div></li>
+</ul></li>
 </ul>
 </div>
 
-<h1 id="react&#x57FA;&#x7840;&#x77E5;&#x8BC6;">React&#x57FA;&#x7840;&#x77E5;&#x8BC6;</h1>
-<p><a href="http://www.devio.org/2016/08/09/React-Native&#x4E4B;React&#x901F;&#x5B66;&#x6559;&#x7A0B;-(&#x4E0A;" target="_blank">react&#x57FA;&#x7840;&#x77E5;&#x8BC6;</a>)</p>
-<p><a href="https://react.docschina.org/docs/hello-world.html" target="_blank">react&#x6587;&#x6863;</a></p>
+<h1 id="let&#x548C;const&#x547D;&#x4EE4;">Let&#x548C;Const&#x547D;&#x4EE4;</h1>
+<h2 id="&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;">&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</h2>
+<ul>
+<li><p>&#x4EC0;&#x4E48;&#x662F;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x5728;  {} &#x5185;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;</p>
+</li>
+<li><p>&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;&#x4F5C;&#x7528;&#x57DF;</p>
+<p>ES5&#x4E2D;&#x53EA;&#x6709;&#x5168;&#x5C40;&#x4F5C;&#x7528;&#x57DF;&#x548C;&#x51FD;&#x6570;&#x4F5C;&#x7528;&#x57DF;,&#x6CA1;&#x6709;&#x5757;&#x7EA7;&#x4F5C;&#x7528;&#x57DF;&#xFF0C;&#x5C31;&#x4F1A;&#x51FA;&#x73B0;&#x4E0B;&#x9762;&#x7684;&#x95EE;&#x9898;</p>
+<p>1&#xFF1A;&#x5185;&#x5C42;&#x53D8;&#x91CF;&#x53EF;&#x80FD;&#x4F1A;&#x8986;&#x76D6;&#x5916;&#x5C42;&#x53D8;&#x91CF;</p>
+<p>2&#xFF1A;&#x7528;&#x4E8E;&#x8BA1;&#x6570;&#x7684;&#x5FAA;&#x73AF;&#x53D8;&#x91CF;&#x6CC4;&#x9732;&#x4E3A;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#xFF0C;&#x5982;for&#x5FAA;&#x73AF;&#x7684; i</p>
+</li>
+</ul>
+<h2 id="let&#x547D;&#x4EE4;">Let&#x547D;&#x4EE4;</h2>
+<blockquote>
+<p>&#x5728;ES5&#x4E2D;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x6709;var&#x547D;&#x4EE4;&#x548C;function&#x547D;&#x4EE4;&#x3002;&#x800C;&#x5728;ES6&#x4E2D;&#x6709;6&#x79CD;&#x58F0;&#x660E;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;var &#x3001;function&#x3001;let&#x3001;const&#x3001;import&#x3001;class&#x547D;&#x4EE4;</p>
+</blockquote>
+<p>  let&#x58F0;&#x660E;&#x7684;&#x53D8;&#x91CF;&#x53EA;&#x5728;&#xFF0C;let&#x547D;&#x4EE4;&#x6240;&#x5728;&#x5730;&#x4EE3;&#x7801;&#x5757;&#x5185;&#x6709;&#x6548;</p>
 
                                 
                                 </section>
@@ -571,12 +589,12 @@
 
             
                 
-                <a href="Es6,Es7,Es8介绍.html" class="navigation navigation-prev " aria-label="Previous page: Es6,Es7,Es8介绍">
+                <a href="项目构建.html" class="navigation navigation-prev " aria-label="Previous page: 项目构建">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Redux.html" class="navigation navigation-next " aria-label="Next page: Redux">
+                <a href="../Webpack/" class="navigation navigation-next " aria-label="Next page: Webpack">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -587,7 +605,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"react基础知识","level":"2.3.2","depth":2,"next":{"title":"Redux","level":"2.3.3","depth":2,"path":"React/Redux.md","ref":"React/Redux.md","articles":[]},"previous":{"title":"Es6,Es7,Es8介绍","level":"2.3.1","depth":2,"path":"React/Es6,Es7,Es8介绍.md","ref":"React/Es6,Es7,Es8介绍.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"React/react基础知识.md","mtime":"2019-02-21T15:56:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-10T03:42:45.118Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Let和Const命令","level":"2.1.2","depth":2,"next":{"title":"Webpack","level":"2.2","depth":1,"path":"Webpack/README.md","ref":"Webpack/README.md","articles":[]},"previous":{"title":"项目构建","level":"2.1.1","depth":2,"path":"ES6/项目构建.md","ref":"ES6/项目构建.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ES6/Let和Const命令.md","mtime":"2019-03-11T08:14:36.363Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-10T03:42:45.118Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
