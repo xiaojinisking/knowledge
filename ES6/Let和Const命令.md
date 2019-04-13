@@ -21,24 +21,27 @@
   2：不允许在相同的作用域内重复声明一个变量
 
     块作用域的父子嵌套作用域可以重复声明
-    ```
-    let i;
-    for ( i = 0; i < 3; i++) {
-      let i = 'abc';
-      console.log(i);
-    }
-    输出3个abc
+---
+
+```
+  let i;
+  for ( i = 0; i < 3; i++) {
+    let i = 'abc';
+    console.log(i);
+  }
+  输出3个abc
 
 
-    {{{{
-      let insane = 'Hello World';
-      {let insane = 'Hello World'}
-    }}}};
-    ```
+  {{{{
+    let insane = 'Hello World';
+    {let insane = 'Hello World'}
+  }}}};
 
-    3:块级作用域出现使得IIFE不再必要了。
+```
 
-    ![](assets/markdown-img-paste-20190311172054742.png)
+3:块级作用域出现使得IIFE不再必要了。
+
+![](assets/markdown-img-paste-20190311172054742.png)
 
 ## Let命令
 
