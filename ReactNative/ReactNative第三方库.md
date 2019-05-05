@@ -6,6 +6,8 @@ https://juejin.im/entry/59dd786cf265da431d3ba6e3
 ## 导航库 react-navigation
 官网[https://reactnavigation.org/docs/zh-Hans/getting-started.html](https://reactnavigation.org/docs/zh-Hans/getting-started.html)
 
+## react-navigation与redux的连接库
+[v3](https://github.com/react-navigation/react-navigation-redux-helpers)
 
 ## 矢量图标
 

@@ -14,7 +14,8 @@
 
 * 其它组件：有时很难分清到底该使用容器组件还是展示组件。例如，有时表单和函数严重耦合在一起
 
-## connet()
+## connet([mapStateToProps],[mapDispatchToProps],[mergeProps],[options])
+>react-redux提供了connect函数，connect是一个高阶函数，首先传入mapStateToProps、mapDispatchToProps，然后返回一个生产Component的函数（wrapWithConnect），然后将真正的Component作为参数传入wrapWithConnect(MyComponent),这样就生产处一个经过包裹的Connect组件，例如：export default connect(mapStateToProps)(HomePage)
 
 * mapStateToProps
 
@@ -45,7 +46,7 @@
   除了读取 state，容器组件还能分发 action。类似的方式，可以定义 mapDispatchToProps() 方法接收 dispatch() 方法并返回期望注入到展示组件的 props 中的回调方法
 
 
-  ##  React Redux 组件 <Provider> 来 魔法般的 让所有容器组件都可以访问 store
+##  React Redux 组件 <Provider> 来 魔法般的 让所有容器组件使用connect()绑定store从而都可以访问到 store
 
   ```
   render(

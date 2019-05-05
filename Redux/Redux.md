@@ -16,24 +16,27 @@
 到此为止，一次用户交互流程结束。可以看到，在整个流程中数据都是单向流动的。
 
 ### Redux和Flux都对比
-![](assets/markdown-img-paste-20190305214458997.png)
+
+![](assets/markdown-img-paste-20190428140215510.png)
 
 ### Redux的优点
-![](assets/markdown-img-paste-20190305214649815.png)
+##
+![](assets/markdown-img-paste-20190428140150457.png)
+# 为什么要用Redux?
 
-### 为什么要用Redux?
 
-![](assets/markdown-img-paste-20190305214845245.png)
+![](assets/markdown-img-paste-20190428140344958.png)
 
 ### Redux的三个基本原则
 
-![](assets/markdown-img-paste-20190305215016979.png)
+
+![](assets/markdown-img-paste-20190428140426440.png)
 
 
 ### Redux 有哪几部分构成？
 
-![](assets/markdown-img-paste-20190305215132797.png)
 
+![](assets/markdown-img-paste-20190428140452505.png)
 
 ## react-redux介绍
 视图层绑定的几个概念
