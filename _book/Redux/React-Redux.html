@@ -970,6 +970,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.9.8" data-path="../ReactNative/网络编程.html">
+            
+                <a href="../ReactNative/网络编程.html">
+            
+                    
+                    网络编程fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.9" data-path="../ReactNative/离线缓存设计.html">
+            
+                <a href="../ReactNative/离线缓存设计.html">
+            
+                    
+                    离线缓存设计
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1210,7 +1236,8 @@
 <li><div><a href="#react-redux">React-Redux</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
 <li><div><a href="#&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x548C;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;">&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x548C;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;</a><i></i></div></li>
-<li><div><a href="#connet">connet()</a><i></i></div></li>
+<li><div><a href="#connetmapstatetopropsmapdispatchtopropsmergepropsoptions">connet([mapStateToProps],[mapDispatchToProps],[mergeProps],[options])</a><i></i></div></li>
+<li><div><a href="#react-redux-&#x7EC4;&#x4EF6;-provider-&#x6765;-&#x9B54;&#x6CD5;&#x822C;&#x7684;-&#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;connect&#x7ED1;&#x5B9A;store&#x4ECE;&#x800C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;-store">React Redux &#x7EC4;&#x4EF6; Provider &#x6765; &#x9B54;&#x6CD5;&#x822C;&#x7684; &#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;connect()&#x7ED1;&#x5B9A;store&#x4ECE;&#x800C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230; store</a><i></i></div></li>
 </ul></li>
 </ul>
 </div>
@@ -1233,7 +1260,10 @@
 <li><p>&#x5176;&#x5B83;&#x7EC4;&#x4EF6;&#xFF1A;&#x6709;&#x65F6;&#x5F88;&#x96BE;&#x5206;&#x6E05;&#x5230;&#x5E95;&#x8BE5;&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x8FD8;&#x662F;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6709;&#x65F6;&#x8868;&#x5355;&#x548C;&#x51FD;&#x6570;&#x4E25;&#x91CD;&#x8026;&#x5408;&#x5728;&#x4E00;&#x8D77;</p>
 </li>
 </ul>
-<h2 id="connet">connet()</h2>
+<h2 id="connetmapstatetopropsmapdispatchtopropsmergepropsoptions">connet([mapStateToProps],[mapDispatchToProps],[mergeProps],[options])</h2>
+<blockquote>
+<p>react-redux&#x63D0;&#x4F9B;&#x4E86;connect&#x51FD;&#x6570;&#xFF0C;connect&#x662F;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x9996;&#x5148;&#x4F20;&#x5165;mapStateToProps&#x3001;mapDispatchToProps&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x751F;&#x4EA7;Component&#x7684;&#x51FD;&#x6570;&#xFF08;wrapWithConnect&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x771F;&#x6B63;&#x7684;Component&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x5165;wrapWithConnect(MyComponent),&#x8FD9;&#x6837;&#x5C31;&#x751F;&#x4EA7;&#x5904;&#x4E00;&#x4E2A;&#x7ECF;&#x8FC7;&#x5305;&#x88F9;&#x7684;Connect&#x7EC4;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;export default connect(mapStateToProps)(HomePage)</p>
+</blockquote>
 <ul>
 <li><p>mapStateToProps</p>
 <p>&#x4F7F;&#x7528; connect() &#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x5B9A;&#x4E49; mapStateToProps &#x8FD9;&#x4E2A;&#x51FD;&#x6570;&#x6765;&#x6307;&#x5B9A;&#x5982;&#x4F55;&#x628A;&#x5F53;&#x524D; Redux store state &#x6620;&#x5C04;&#x5230;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x7684; props &#x4E2D;&#x3002;&#x4F8B;&#x5982;&#xFF0C;VisibleTodoList &#x9700;&#x8981;&#x8BA1;&#x7B97;&#x4F20;&#x5230; TodoList &#x4E2D;&#x7684; todos&#xFF0C;&#x6240;&#x4EE5;&#x5B9A;&#x4E49;&#x4E86;&#x6839;&#x636E; state.visibilityFilter &#x6765;&#x8FC7;&#x6EE4; state.todos &#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x5728; mapStateToProps &#x4E2D;&#x4F7F;&#x7528;&#x3002;</p>
@@ -1259,7 +1289,7 @@ const mapStateToProps = state =&gt; {
 <p>&#x9664;&#x4E86;&#x8BFB;&#x53D6; state&#xFF0C;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x8FD8;&#x80FD;&#x5206;&#x53D1; action&#x3002;&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49; mapDispatchToProps() &#x65B9;&#x6CD5;&#x63A5;&#x6536; dispatch() &#x65B9;&#x6CD5;&#x5E76;&#x8FD4;&#x56DE;&#x671F;&#x671B;&#x6CE8;&#x5165;&#x5230;&#x5C55;&#x793A;&#x7EC4;&#x4EF6;&#x7684; props &#x4E2D;&#x7684;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;</p>
 </li>
 </ul>
-<h2 id="react-redux-&#x7EC4;&#x4EF6;--&#x6765;-&#x9B54;&#x6CD5;&#x822C;&#x7684;-&#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;-store">React Redux &#x7EC4;&#x4EF6; <provider> &#x6765; &#x9B54;&#x6CD5;&#x822C;&#x7684; &#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE; store</provider></h2>
+<h2 id="react-redux-&#x7EC4;&#x4EF6;--&#x6765;-&#x9B54;&#x6CD5;&#x822C;&#x7684;-&#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;connect&#x7ED1;&#x5B9A;store&#x4ECE;&#x800C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;-store">React Redux &#x7EC4;&#x4EF6; <provider> &#x6765; &#x9B54;&#x6CD5;&#x822C;&#x7684; &#x8BA9;&#x6240;&#x6709;&#x5BB9;&#x5668;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;connect()&#x7ED1;&#x5B9A;store&#x4ECE;&#x800C;&#x90FD;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230; store</provider></h2>
 <pre><code>  render(
   &lt;Provider store={store}&gt;
     &lt;App /&gt;
@@ -1309,7 +1339,7 @@ const mapStateToProps = state =&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"React-Redux","level":"2.6.5","depth":2,"next":{"title":"实例TodoList","level":"2.6.6","depth":2,"path":"Redux/Todolist.md","ref":"Redux/Todolist.md","articles":[]},"previous":{"title":"Store","level":"2.6.4","depth":2,"path":"Redux/Store.md","ref":"Redux/Store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/React-Redux.md","mtime":"2019-04-04T06:26:33.551Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T08:52:55.270Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"React-Redux","level":"2.6.5","depth":2,"next":{"title":"实例TodoList","level":"2.6.6","depth":2,"path":"Redux/Todolist.md","ref":"Redux/Todolist.md","articles":[]},"previous":{"title":"Store","level":"2.6.4","depth":2,"path":"Redux/Store.md","ref":"Redux/Store.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"Redux/React-Redux.md","mtime":"2019-05-03T08:04:11.704Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-08T08:44:30.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

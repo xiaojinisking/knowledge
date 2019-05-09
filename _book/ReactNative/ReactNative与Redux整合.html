@@ -970,6 +970,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.9.8" data-path="网络编程.html">
+            
+                <a href="网络编程.html">
+            
+                    
+                    网络编程fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.9" data-path="离线缓存设计.html">
+            
+                <a href="离线缓存设计.html">
+            
+                    
+                    离线缓存设计
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1209,13 +1235,18 @@
                                 <div class="treeview__container"><ul>
 <li><div><a href="#&#x5982;&#x4F55;&#x5728;reactnative-&#x4E2D;&#x4F7F;&#x7528;redux">&#x5982;&#x4F55;&#x5728;ReactNative &#x4E2D;&#x4F7F;&#x7528;Redux</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
 <ul>
+<li><div><a href="#react-native-&#x8C03;&#x8BD5;redux&#x5DE5;&#x5177;&#xFF1A;">react Native &#x8C03;&#x8BD5;redux&#x5DE5;&#x5177;&#xFF1A;</a><i></i></div></li>
 <li><div><a href="#&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</a><i></i></div></li>
 <li><div><a href="#react-native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation-&#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;">React Native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation &#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;</a><i></i></div></li>
+<li><div><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x4E2D;&#x95F4;&#x4EF6;">&#x81EA;&#x5B9A;&#x4E49;&#x4E2D;&#x95F4;&#x4EF6;</a><i></i></div></li>
+<li><div><a href="#&#x5904;&#x7406;android&#x4E2D;&#x7684;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x952E;">&#x5904;&#x7406;android&#x4E2D;&#x7684;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x952E;</a><i></i></div></li>
 </ul></li>
 </ul>
 </div>
 
 <h1 id="&#x5982;&#x4F55;&#x5728;reactnative-&#x4E2D;&#x4F7F;&#x7528;redux">&#x5982;&#x4F55;&#x5728;ReactNative &#x4E2D;&#x4F7F;&#x7528;Redux</h1>
+<h2 id="react-native-&#x8C03;&#x8BD5;redux&#x5DE5;&#x5177;&#xFF1A;">react Native &#x8C03;&#x8BD5;redux&#x5DE5;&#x5177;&#xFF1A;</h2>
+<p><a href="https://github.com/jhen0409/remotedev-rn-debugger" target="_blank">remote-redux-devtools-on-debugger</a></p>
 <h2 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;">&#x51C6;&#x5907;&#x5DE5;&#x4F5C;</h2>
 <p>&#x6839;&#x636E;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x5982;&#x4E0B;&#x7EC4;&#x4EF6;&#xFF1A;</p>
 <ul>
@@ -1231,12 +1262,127 @@ yarn add react-redux
 yarn add redux-devtools
 </code></pre><p><a href="http://cn.redux.js.org/docs/react-redux/" target="_blank">react-redux&#x6587;&#x6863;</a></p>
 <h2 id="react-native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation-&#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;">React Native&#x4E2D;&#x4F7F;&#x7528;&#x4E86;react-navigation &#x540E;&#x5982;&#x4F55;&#x4E0E;redux&#x7EC4;&#x5408;&#x4F7F;&#x7528;</h2>
+<blockquote>
+<p>&#x5F53;&#x4F7F;&#x7528;&#x4E86;React Navigation&#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;&#x60F3;&#x8981;&#x96C6;&#x6210;redux&#x5C31;&#x5FC5;&#x987B;&#x5F15;&#x5165;react-navigation-redux-helpers&#x8FD9;&#x4E2A;&#x5E93;</p>
+</blockquote>
 <ul>
 <li>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x5B89;&#x88C5;react-navigation-redux-helpers&#xFF0C;&#x8FD9;&#x4E2A;&#x5305;&#x5141;&#x8BB8;&#x901A;&#x8FC7;redux&#x6765;&#x7BA1;&#x7406;react navigation&#x7684;state</li>
 </ul>
 <pre><code>npm install --save react-navigation-redux-helpers
-</code></pre><p><a href="https://github.com/react-navigation/react-navigation-redux-helpers" target="_blank">github&#x5730;&#x5740;</a></p>
+</code></pre><p><a href="https://github.com/react-navigation/react-navigation-redux-helpers" target="_blank">github&#x5730;&#x5740;V3</a></p>
+<ul>
+<li>Example</li>
+</ul>
+<p><a href="https://github.com/react-navigation/redux-helpers" target="_blank">&#x6587;&#x6863;&#x51FA;&#x5904;</a></p>
+<pre><code>import {
+  createStackNavigator,
+} from &apos;react-navigation&apos;;
+import {
+  createStore,
+  applyMiddleware,
+  combineReducers,
+} from &apos;redux&apos;;
+import {
+  createReduxContainer,
+  createReactNavigationReduxMiddleware,
+  createNavigationReducer,
+} from &apos;react-navigation-redux-helpers&apos;;
+import { Provider, connect } from &apos;react-redux&apos;;
+import React from &apos;react&apos;;
 
+//&#x521B;&#x5EFA;&#x5BFC;&#x822A;&#x5668;
+const AppNavigator = createStackNavigator(AppRouteConfigs);
+
+//&#x521B;&#x5EFA;&#x5BFC;&#x822A;&#x5668;&#x7684;reducer
+const navReducer = createNavigationReducer(AppNavigator);
+
+//&#x5C06;&#x5BFC;&#x822A;&#x5668;&#x7684;reducer&#x5408;&#x5E76;&#x5230;store&#x7684;reducer
+const appReducer = combineReducers({
+  nav: navReducer,
+  ...
+});
+
+//&#x521B;&#x5EFA;&#x5BFC;&#x822A;&#x5668;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x6700;&#x7EC8;&#x52A0;&#x5165;&#x5230;store&#x4E2D;
+const middleware = createReactNavigationReduxMiddleware(
+  state =&gt; state.nav,
+);
+
+//&#x521B;&#x5EFA;&#x5BFC;&#x822A;&#x5668;&#x7684;Redux&#x5BB9;&#x5668;
+const App = createReduxContainer(AppNavigator);
+
+//&#x4E0B;&#x9762;&#x662F;demo&#x5982;&#x4F55;&#x4ECE;state&#x4E2D;&#x83B7;&#x53D6;nav
+const mapStateToProps = (state) =&gt; ({
+  state: state.nav,
+});
+const AppWithNavigationState = connect(mapStateToProps)(App);
+
+const store = createStore(
+  appReducer,
+  applyMiddleware(middleware),
+);
+
+class Root extends React.Component {
+  render() {
+    return (
+      &lt;Provider store={store}&gt;
+        &lt;AppWithNavigationState /&gt;
+      &lt;/Provider&gt;
+    );
+  }
+}
+</code></pre><p>//&#x5173;&#x952E;&#x70B9;&#x51E0;&#x4E2A;&#x70B9;&#xFF1A;
+1&#xFF1A;createReactNavigationReduxMiddleware &#x521B;&#x5EFA;&#x4E2D;&#x95F4;&#x4EF6;&#xFF0C;&#x52A0;&#x5165;&#x5230;store&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x4E2D;
+2&#xFF1A;createNavigationReducer  &#x521B;&#x5EFA;reducer&#xFF0C;&#x5408;&#x5E76;&#x5230;store&#x7684;reducer&#x4E2D;
+3&#xFF1A;createReduxContainer  &#x5C06;&#x5BFC;&#x822A;&#x5668;&#x521B;&#x5EFA;&#x4E3A;&#x7EC4;&#x4EF6;</p>
+<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x4E2D;&#x95F4;&#x4EF6;">&#x81EA;&#x5B9A;&#x4E49;&#x4E2D;&#x95F4;&#x4EF6;</h2>
+<p>&#x6CE8;&#x610F;&#x5199;&#x6CD5;</p>
+<pre><code>const logger = store =&gt; next =&gt; action =&gt; {
+    if (typeof action === &apos;function&apos;) {
+        console.log(&apos;dispatching a function&apos;);
+    }else{
+        console.log(&apos;dispatching &apos;,action);
+    }
+    const result = next(action);
+    console.log(&apos;nextState &apos;,store.getState());
+};
+
+
+const middlewares = [
+    middleware,
+    logger
+]
+//&#x521B;&#x5EFA;store
+export default createStore(
+     reducers,
+     applyMiddleware(...middlewares)
+);
+</code></pre><h2 id="&#x5904;&#x7406;android&#x4E2D;&#x7684;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x952E;">&#x5904;&#x7406;android&#x4E2D;&#x7684;&#x7269;&#x7406;&#x8FD4;&#x56DE;&#x952E;</h2>
+<p><a href="https://github.com/react-navigation/redux-helpers" target="_blank">&#x6587;&#x6863;&#x51FA;&#x5904;&#xFF1A;</a></p>
+<pre><code>  componentDidMount() {
+        BackHandler.addEventListener(&quot;hardwareBackPress&quot;, this.onBackPress);
+    }
+
+    componentWillUnmount() {
+        BackHandler.removeEventListener(&quot;hardwareBackPress&quot;, this.onBackPress);
+    }
+
+    onBackPress = () =&gt; {
+        const { dispatch, nav } = this.props;
+        // alert(nav.routes[1].index)
+        if (nav.routes[1].index === 0) {  //&#x6CA1;&#x6709;&#x4E0A;&#x4E00;&#x5C42;&#x8DEF;&#x7531;&#x6CA1;&#x4E86;  &#x6CE8;&#x610F;&#x8FD9;&#x4E2A;&#x5730;&#x65B9;
+            return false;
+        }
+        dispatch(NavigationActions.back());
+        return true;
+    };
+
+  //&#x83B7;&#x53D6;nav
+  const mapStateToProps = state=&gt;({
+      nav:state.nav
+  })
+
+  export default connect(mapStateToProps)(HomePage)
+</code></pre>
                                 
                                 </section>
                             
@@ -1279,7 +1425,7 @@ yarn add redux-devtools
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReactNative与Redux整合","level":"2.9.5","depth":2,"next":{"title":"ReactNative调试","level":"2.9.6","depth":2,"path":"ReactNative/调试.md","ref":"ReactNative/调试.md","articles":[]},"previous":{"title":"ReactNavtive导航器","level":"2.9.4","depth":2,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNative与Redux整合.md","mtime":"2019-03-05T15:19:40.352Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T08:52:55.270Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ReactNative与Redux整合","level":"2.9.5","depth":2,"next":{"title":"ReactNative调试","level":"2.9.6","depth":2,"path":"ReactNative/调试.md","ref":"ReactNative/调试.md","articles":[]},"previous":{"title":"ReactNavtive导航器","level":"2.9.4","depth":2,"path":"ReactNative/ReactNavigation导航器.md","ref":"ReactNative/ReactNavigation导航器.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/ReactNative与Redux整合.md","mtime":"2019-05-07T13:27:46.884Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-08T08:44:30.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

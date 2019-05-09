@@ -579,7 +579,7 @@ const AuthStack = createStackNavigator({
 
 
 //新入口
-export default createSwitchNavigator(
+  export default createSwitchNavigator(
 	{
 		Auth:AuthStack,         //为一次性页面
 		App:AppStackNavigator   //为上面demo的公共入库
@@ -1008,3 +1008,34 @@ const styles = StyleSheet.create({
 });
 
 ```
+
+
+## 可定制的NavigationBar
+
+![](assets/markdown-img-paste-2019050806265834.png)
+
+
+![](assets/markdown-img-paste-20190508062747476.png)
+
+![](assets/markdown-img-paste-20190508062819362.png)
+
+
+![](assets/markdown-img-paste-20190508063301678.png)
+
+
+![](assets/markdown-img-paste-20190508063332506.png)
+
+
+
+![](assets/markdown-img-paste-20190508063459823.png)
+
+
+![](assets/markdown-img-paste-20190508063555849.png)
+
+![](assets/markdown-img-paste-20190508063614428.png)
+
+
+![](assets/markdown-img-paste-20190508063757698.png)
+
+
+![](assets/markdown-img-paste-20190508063839353.png)

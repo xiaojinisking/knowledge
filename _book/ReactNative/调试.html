@@ -970,6 +970,32 @@
             
         </li>
     
+        <li class="chapter " data-level="2.9.8" data-path="网络编程.html">
+            
+                <a href="网络编程.html">
+            
+                    
+                    网络编程fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.9" data-path="离线缓存设计.html">
+            
+                <a href="离线缓存设计.html">
+            
+                    
+                    离线缓存设计
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1215,6 +1241,7 @@
 <li><div><a href="#&#x5F02;&#x5E38;&#x5904;&#x7406;---redbox-&#x548C;-yellowbox">&#x5F02;&#x5E38;&#x5904;&#x7406; - RedBox &#x548C; YellowBox</a><i></i></div></li>
 </ul></li>
 <li><div><a href="#chrome-developer-tools">Chrome Developer Tools</a><i></i></div></li>
+<li><div><a href="#react-native-debugger">React native Debugger</a><i></i></div></li>
 <li><div><a href="#&#x771F;&#x673A;&#x8C03;&#x8BD5;">&#x771F;&#x673A;&#x8C03;&#x8BD5;</a><i></i></div></li>
 </ul></li>
 </ul>
@@ -1263,6 +1290,7 @@ console.warn(&apos;YellowBox is disabled.&apos;); //&#x6B64;&#x65F6;&#x8B66;&#x5
 <img src="assets/markdown-img-paste-2019022023483276.png" alt=""></p>
 <h2 id="chrome-developer-tools">Chrome Developer Tools</h2>
 <p>&#x901A;&#x8FC7;Chrome&#x8C03;&#x8BD5;React Native&#x7684;&#x6B65;&#x9AA4;</p>
+<p>&#x641C;&#x7D22;&#x6587;&#x4EF6;&#x5FEB;&#x6377;&#x952E; ctrl + o</p>
 <p><strong>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x542F;&#x52A8;&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;</strong>
 &#x5728;Developer Menu&#x4E0B;&#x5355;&#x51FB;&quot;Debug JS Remotely&quot; &#x542F;&#x52A8;JS&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x529F;&#x80FD;&#x3002;&#x6B64;&#x65F6;Chrome&#x4F1A;&#x88AB;&#x6253;&#x5F00;&#xFF0C;&#x540C;&#x65F6;&#x4F1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x201C;<a href="http://localhost:8081/debugger-ui.&#x201D;" target="_blank">http://localhost:8081/debugger-ui.&#x201D;</a> Tab&#x9875;&#x3002;</p>
 <p><img src="assets/markdown-img-paste-20190220235728658.png" alt=""></p>
@@ -1278,7 +1306,55 @@ console.warn(&apos;YellowBox is disabled.&apos;); //&#x6B64;&#x65F6;&#x8B66;&#x5
 <li>&#x8DF3;&#x51FA;(Step out): &#x5F53;&#x4F60;&#x8FDB;&#x5165;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x540E;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x70B9;&#x51FB; Step out &#x6267;&#x884C;&#x51FD;&#x6570;&#x4F59;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x5E76;&#x8DF3;&#x51FA;&#x8BE5;&#x51FD;&#x6570;&#x3002;</li>
 <li>&#x65AD;&#x70B9;&#x5207;&#x6362;(Toggle breakpoints): &#x63A7;&#x5236;&#x65AD;&#x70B9;&#x7684;&#x5F00;&#x542F;&#x548C;&#x5173;&#x95ED;&#xFF0C;&#x540C;&#x65F6;&#x4FDD;&#x6301;&#x65AD;&#x70B9;&#x5B8C;&#x597D;&#x3002;</li>
 </ul>
-<h2 id="&#x771F;&#x673A;&#x8C03;&#x8BD5;">&#x771F;&#x673A;&#x8C03;&#x8BD5;</h2>
+<h2 id="react-native-debugger">React native Debugger</h2>
+<p><a href="https://github.com/jhen0409/react-native-debugger" target="_blank">&#x6587;&#x6863;</a>
+&#x662F;Redux debug&#x4E2D;&#x4E00;&#x79CD;&#xFF0C;&#x4ED6;&#x662F;&#x548C;redux debug tools &#x4E00;&#x6837;&#x7684;api
+&#x56E0;&#x4E3A;&#x4F7F;&#x7528;Chrome Developer Tools  &#x65F6;&#x4E0D;&#x663E;&#x793A;redux&#x7684;&#x65E5;&#x5FD7;&#xFF0C;&#x8FD9;&#x4E2A;&#x5DE5;&#x5177;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x6211;&#x4EEC;&#x4E5F;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;Redux-logger&#x6765;&#x5F25;&#x8865;&#xFF0C;&#x914D;&#x5408;Chrome Developer Tools&#x4E00;&#x8D77;&#x4F7F;&#x7528;</p>
+<p><img src="assets/markdown-img-paste-20190508164034253.png" alt=""></p>
+<p>&#x6CE8;&#x610F;redux&#x4E2D;&#x4E5F;&#x662F;&#x8981;&#x628A;REDUX_DEVTOOLS &#x914D;&#x7F6E;&#x8FDB;&#x53BB;&#x7684;</p>
+<pre><code>import {applyMiddleware, createStore,compose} from &quot;redux&quot;;
+import reducers from &apos;../reducer&apos;
+import {middleware} from &quot;../navigator/AppNavigator&quot;;
+import thunk from &apos;redux-thunk&apos;;
+import logger from &apos;redux-logger&apos;;
+
+//&#x81EA;&#x5B9A;&#x4E49;&#x7684;log&#x6253;&#x5370;
+/*const logger = store =&gt; next =&gt; action =&gt; {
+    if (typeof action === &apos;function&apos;) {
+        console.log(&apos;dispatching a function&apos;);
+    }else{
+        console.log(&apos;dispatching &apos;,action);
+    }
+    const result = next(action);
+    console.log(&apos;nextState &apos;,store.getState());
+};*/
+
+const composeEnhancers =
+     typeof window === &apos;object&apos; &amp;&amp;
+     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+            window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+                // Specify extension&#x2019;s options like name, actionsBlacklist, actionsCreators, serialize...
+            }) : compose;
+
+const middlewares = [
+    middleware,
+    logger,
+    thunk,
+]
+
+const enhancer = composeEnhancers(
+     applyMiddleware(...middlewares)
+);
+
+
+//&#x521B;&#x5EFA;store
+export default createStore(
+     reducers,
+     // applyMiddleware(...middlewares),
+     enhancer
+);
+</code></pre><h2 id="&#x771F;&#x673A;&#x8C03;&#x8BD5;">&#x771F;&#x673A;&#x8C03;&#x8BD5;</h2>
 <p><strong>&#x5728;iOS&#x4E0A;</strong>
 &#x6253;&#x5F00;&quot;RCTWebSocketExecutor.m &quot;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x201C;localhost&#x201D;&#x6539;&#x4E3A;&#x4F60;&#x7684;&#x7535;&#x8111;&#x7684;ip&#xFF0C;&#x7136;&#x540E;&#x5728;Developer Menu&#x4E0B;&#x5355;&#x51FB;&quot;Debug JS Remotely&quot; &#x542F;&#x52A8;JS&#x8FDC;&#x7A0B;&#x8C03;&#x8BD5;&#x529F;&#x80FD;&#x3002;</p>
 <p><strong>&#x5728;Android&#x4E0A;</strong>
@@ -1333,7 +1409,7 @@ adb reverse tcp:8081 tcp:8081</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ReactNative调试","level":"2.9.6","depth":2,"next":{"title":"ReactNative第三方库","level":"2.9.7","depth":2,"path":"ReactNative/ReactNative第三方库.md","ref":"ReactNative/ReactNative第三方库.md","articles":[]},"previous":{"title":"ReactNative与Redux整合","level":"2.9.5","depth":2,"path":"ReactNative/ReactNative与Redux整合.md","ref":"ReactNative/ReactNative与Redux整合.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/调试.md","mtime":"2019-02-20T16:04:57.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-24T08:52:55.270Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ReactNative调试","level":"2.9.6","depth":2,"next":{"title":"ReactNative第三方库","level":"2.9.7","depth":2,"path":"ReactNative/ReactNative第三方库.md","ref":"ReactNative/ReactNative第三方库.md","articles":[]},"previous":{"title":"ReactNative与Redux整合","level":"2.9.5","depth":2,"path":"ReactNative/ReactNative与Redux整合.md","ref":"ReactNative/ReactNative与Redux整合.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/调试.md","mtime":"2019-05-08T09:12:37.005Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-08T08:44:30.928Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

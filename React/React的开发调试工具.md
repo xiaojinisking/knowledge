@@ -1,5 +1,5 @@
 # 调试工具 React Developer Tools
-
+[文档](https://github.com/zalmoxisus/redux-devtools-extension)
 
 ![](assets/markdown-img-paste-20190328232957714.png)
 

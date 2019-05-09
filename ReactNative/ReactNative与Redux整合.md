@@ -1,5 +1,9 @@
 # 如何在ReactNative 中使用Redux
 
+## react Native 调试redux工具：
+[remote-redux-devtools-on-debugger](https://github.com/jhen0409/remotedev-rn-debugger)
+
+
 ## 准备工作
 根据需要安装如下组件：
 * redux(必选)

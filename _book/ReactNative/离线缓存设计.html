@@ -1,0 +1,1566 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>离线缓存设计 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapters-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="网络编程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">前端</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../study.html">
+            
+                <a href="../study.html">
+            
+                    
+                    学习进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../前端/手册.html">
+            
+                <a href="../前端/手册.html">
+            
+                    
+                    手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../前端/Mock.html">
+            
+                <a href="../前端/Mock.html">
+            
+                    
+                    Mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../前端/测试.html">
+            
+                <a href="../前端/测试.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../ES6/">
+            
+                <a href="../ES6/">
+            
+                    
+                    ES6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../ES6/项目构建.html">
+            
+                <a href="../ES6/项目构建.html">
+            
+                    
+                    项目构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../ES6/Let和Const命令.html">
+            
+                <a href="../ES6/Let和Const命令.html">
+            
+                    
+                    Let和Const命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../ES6/字符串扩展.html">
+            
+                <a href="../ES6/字符串扩展.html">
+            
+                    
+                    字符串扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../ES6/变量的解构赋值.md">
+            
+                <span>
+            
+                    
+                    变量的解构赋值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../ES6/数值的扩展.md">
+            
+                <span>
+            
+                    
+                    数值的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../ES6/数组的扩展.md">
+            
+                <span>
+            
+                    
+                    数组的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../ES6/函数的扩展.html">
+            
+                <a href="../ES6/函数的扩展.html">
+            
+                    
+                    函数的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../ES6/对象的扩展.html">
+            
+                <a href="../ES6/对象的扩展.html">
+            
+                    
+                    对象的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../ES6/Symbol数据类型.html">
+            
+                <a href="../ES6/Symbol数据类型.html">
+            
+                    
+                    Symbol数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../ES6/Set和Map数据结构.html">
+            
+                <a href="../ES6/Set和Map数据结构.html">
+            
+                    
+                    Set和Map数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="../ES6/Proxy和Reflect.html">
+            
+                <a href="../ES6/Proxy和Reflect.html">
+            
+                    
+                    Proxy和Reflect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="../ES6/Promise.html">
+            
+                <a href="../ES6/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.13" data-path="../ES6/Iterator遍历器和for...of循环.html">
+            
+                <a href="../ES6/Iterator遍历器和for...of循环.html">
+            
+                    
+                    遍历器Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.14" data-path="../ES6/Genetor.html">
+            
+                <a href="../ES6/Genetor.html">
+            
+                    
+                    Genetor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.15" data-path="../ES6/修饰器.html">
+            
+                <a href="../ES6/修饰器.html">
+            
+                    
+                    修饰器Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.16" data-path="../ES6/模块化.html">
+            
+                <a href="../ES6/模块化.html">
+            
+                    
+                    模块化Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Webpack/">
+            
+                <a href="../Webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../React/">
+            
+                <a href="../React/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../React/Es6,Es7,Es8介绍.md">
+            
+                <span>
+            
+                    
+                    Es6,Es7,Es8介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../React/react基础知识.html">
+            
+                <a href="../React/react基础知识.html">
+            
+                    
+                    react基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../React/React的开发调试工具.html">
+            
+                <a href="../React/React的开发调试工具.html">
+            
+                    
+                    React的开发调试工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../React/JSX.html">
+            
+                <a href="../React/JSX.html">
+            
+                    
+                    JSX介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../React/元素.html">
+            
+                <a href="../React/元素.html">
+            
+                    
+                    元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../React/组件.html">
+            
+                <a href="../React/组件.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../React/组件属性props.html">
+            
+                <a href="../React/组件属性props.html">
+            
+                    
+                    组件属性props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../React/组件的状态state.html">
+            
+                <a href="../React/组件的状态state.html">
+            
+                    
+                    组件状态state
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../React/组件属性ref.html">
+            
+                <a href="../React/组件属性ref.html">
+            
+                    
+                    组件属性ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../React/组件的生命周期.html">
+            
+                <a href="../React/组件的生命周期.html">
+            
+                    
+                    组件生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../React/事件处理.html">
+            
+                <a href="../React/事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../React/表单.html">
+            
+                <a href="../React/表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../React/列表&keys.html">
+            
+                <a href="../React/列表&keys.html">
+            
+                    
+                    列表&keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../React/状态提升.html">
+            
+                <a href="../React/状态提升.html">
+            
+                    
+                    状态提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../React/高阶组件.html">
+            
+                <a href="../React/高阶组件.html">
+            
+                    
+                    高阶组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../React/content.md">
+            
+                <span>
+            
+                    
+                    content
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="../React/Reconciliation(协调,diff算法,DOM">
+            
+                <span>
+            
+                    
+                    Reconciliation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="../React/React测试.md">
+            
+                <span>
+            
+                    
+                    React测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Redux/Redux.html">
+            
+                <a href="../Redux/Redux.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Redux/redux介绍.html">
+            
+                <a href="../Redux/redux介绍.html">
+            
+                    
+                    redux介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Redux/Action.html">
+            
+                <a href="../Redux/Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Redux/Reducer.html">
+            
+                <a href="../Redux/Reducer.html">
+            
+                    
+                    Reducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Redux/Store.html">
+            
+                <a href="../Redux/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Redux/React-Redux.html">
+            
+                <a href="../Redux/React-Redux.html">
+            
+                    
+                    React-Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Redux/Todolist.html">
+            
+                <a href="../Redux/Todolist.html">
+            
+                    
+                    实例TodoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../NodeJs/">
+            
+                <a href="../NodeJs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../NodeJs/简介.html">
+            
+                <a href="../NodeJs/简介.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../NodeJs/开发环境.html">
+            
+                <a href="../NodeJs/开发环境.html">
+            
+                    
+                    开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../NodeJs/调试.html">
+            
+                <a href="../NodeJs/调试.html">
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Taro/">
+            
+                <a href="../Taro/">
+            
+                    
+                    Taro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    ReactNative
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="开发环境搭建.html">
+            
+                <a href="开发环境搭建.html">
+            
+                    
+                    开发环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="React-Native布局.html">
+            
+                <a href="React-Native布局.html">
+            
+                    
+                    ReactNative布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="ReactNative列表.html">
+            
+                <a href="ReactNative列表.html">
+            
+                    
+                    ReactNative列表组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="ReactNavigation导航器.html">
+            
+                <a href="ReactNavigation导航器.html">
+            
+                    
+                    ReactNavtive导航器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.5" data-path="ReactNative与Redux整合.html">
+            
+                <a href="ReactNative与Redux整合.html">
+            
+                    
+                    ReactNative与Redux整合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.6" data-path="调试.html">
+            
+                <a href="调试.html">
+            
+                    
+                    ReactNative调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.7" data-path="ReactNative第三方库.html">
+            
+                <a href="ReactNative第三方库.html">
+            
+                    
+                    ReactNative第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.8" data-path="网络编程.html">
+            
+                <a href="网络编程.html">
+            
+                    
+                    网络编程fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.9.9" data-path="离线缓存设计.html">
+            
+                <a href="离线缓存设计.html">
+            
+                    
+                    离线缓存设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">产品设计</li>
+        
+        
+    
+
+    
+        
+        <li class="header">服务端</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    python爬虫
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    swoole
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">搜索引擎</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    elasticsearch
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../微服务/">
+            
+                <a href="../微服务/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../swoft/">
+            
+                <a href="../swoft/">
+            
+                    
+                    Swoft
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">大数据</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                    大数据
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">运营</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../vagrant/">
+            
+                <a href="../vagrant/">
+            
+                    
+                    vagrant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../docker/">
+            
+                <a href="../docker/">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">项目</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" >
+            
+                <span>
+            
+                    
+                    [电商]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >离线缓存设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><ul>
+<li><div><a href="#&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x8BBE;&#x8BA1;">&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x8BBE;&#x8BA1;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x4EC0;&#x4E48;&#x662F;asyncstorage">&#x4EC0;&#x4E48;&#x662F;AsyncStorage?</a><i></i></div></li>
+<li><div><a href="#&#x5982;&#x4F55;&#x4F7F;&#x7528;asyncstorage">&#x5982;&#x4F55;&#x4F7F;&#x7528;AsyncStorage</a><i></i></div></li>
+<li><div><a href="#&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7B56;&#x7565;">&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7B56;&#x7565;</a><i></i></div></li>
+<li><div><a href="#&#x5B9E;&#x73B0;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;a&#x7B56;&#x7565;&#xFF1A;&#x4F18;&#x5148;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#x6216;&#x4E0D;&#x5B58;&#x5219;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;">&#x5B9E;&#x73B0;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;a&#x7B56;&#x7565;&#xFF1A;&#x4F18;&#x5148;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#x6216;&#x4E0D;&#x5B58;&#x5219;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x8BBE;&#x8BA1;">&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x8BBE;&#x8BA1;</h1>
+<p>RN&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x5728;RN&#x4E2D;&#x7528;AsyncStorage&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5B58;&#x50A8;</p>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;asyncstorage">&#x4EC0;&#x4E48;&#x662F;AsyncStorage?</h2>
+<ul>
+<li>&#x7B80;&#x5355;&#x7684;&#x3001;&#x5F02;&#x6B65;&#x7684;&#x3001;&#x6301;&#x4E45;&#x5316;&#x7684;key-value&#x5B58;&#x50A8;&#x7ED3;&#x6784;</li>
+<li>AsyncStorage&#x4E5F;&#x662F;ReactNative&#x5B98;&#x65B9;&#x63A8;&#x8350;&#x7684;&#x6570;&#x636E;&#x5B58;&#x50A8;&#x65B9;&#x5F0F;&#xFF0C;&#x65E8;&#x5728;&#x4EE3;&#x66FF;LocalStorage</li>
+</ul>
+<p>&#x63A8;&#x8350;&#x5728; AsyncStorage &#x7684;&#x57FA;&#x7840;&#x4E0A;&#x505A;&#x4E00;&#x5C42;&#x62BD;&#x8C61;&#x5C01;&#x88C5;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x4F7F;&#x7528; AsyncStorage&#x3002;</p>
+<p>&#x5728; iOS &#x4E0A;&#xFF0C;AsyncStorage&#x5728;&#x539F;&#x751F;&#x7AEF;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x628A;&#x8F83;&#x5C0F;&#x503C;&#x5B58;&#x653E;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5B57;&#x5178;&#x4E2D;&#xFF0C;&#x800C;&#x628A;&#x8F83;&#x5927;&#x503C;&#x5199;&#x5165;&#x5355;&#x72EC;&#x7684;&#x6587;&#x4EF6;&#x3002;&#x5728; Android &#x4E0A;&#xFF0C;AsyncStorage&#x4F1A;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;RocksDB&#xFF0C;&#x6216;&#x9000;&#x800C;&#x9009;&#x62E9; SQLite&#x3002;</p>
+<p><a href="https://reactnative.cn/docs/asyncstorage/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<h2 id="&#x5982;&#x4F55;&#x4F7F;&#x7528;asyncstorage">&#x5982;&#x4F55;&#x4F7F;&#x7528;AsyncStorage</h2>
+<p>&#x9996;&#x5148;&#x5BFC;&#x5165;AsyncStorage&#x4F5C;&#x4E3A;RN&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x7EC4;&#x4EF6;&#x4F7F;&#x7528;&#x4E4B;&#x524D;&#x9700;&#x8981;&#x5148;&#x5BFC;&#x5165;&#xFF1A;</p>
+<pre><code>import {AsyncStorage} from &apos;react-native&apos;
+</code></pre><p>&#x5B58;&#x50A8;&#x6570;&#x636E;</p>
+<pre><code>/**
+*&#x5B58;&#x50A8;&#x6570;&#x636E;
+* @return {Promise.&lt;void&gt;}
+*/
+
+async doSave(){
+  //&#x7528;&#x6CD5;&#x4E00;
+  AsyncStorage.setItem(KEY,this.value,error=&gt;{
+    error &amp;&amp; console.log(error.toString());
+  });
+
+  //&#x7528;&#x6CD5;&#x4E8C; &#x5229;&#x7528;promise&#x7684;catch&#x6765;&#x6355;&#x83B7;&#x5B58;&#x50A8;&#x5F02;&#x5E38;
+  AsyncStorage.setItem(KEY,this.value)
+              .catch(error=&gt;{
+                error &amp;&amp; console.log(error.toString());
+              })
+  //&#x7528;&#x6CD5;&#x4E09; &#x4F7F;&#x7528;ES7&#x7684; async &#x548C;await
+  try{
+    await AsyncStorage.setItem(KEY,this.value)
+  }catch(error){
+    error &amp;&amp; console.log(error.toString())
+  }
+}
+</code></pre><p>&#x8BFB;&#x53D6;&#x6570;&#x636E;</p>
+<pre><code>async getData(){
+  //&#x7528;&#x6CD5;&#x4E00;
+  AsyncStorage.getItem(KEY,(error,value)=&gt;{
+      this.setState({
+          showText:value
+      });
+      error &amp;&amp; console.log(error.toString());
+  })
+
+  //&#x7528;&#x6CD5;&#x4E8C;
+  AsyncStorage.getItem(KEY)
+    .then(value =&gt; {
+        this.setState({
+          showText:value
+        })
+    })
+    .catch(error=&gt;{
+       console.log(error.toString());
+    })
+
+  //&#x7528;&#x6CD5;&#x4E09;
+  try{
+    const value = await AsyncStorage.getItem(KEY);
+    this.setState({
+        showText:value
+    })
+  }catch(error){
+    error &amp;&amp; console.log(error.toString());
+  }
+}
+</code></pre><p>&#x5220;&#x9664;&#x6570;&#x636E;</p>
+<pre><code>/**
+*&#x5220;&#x9664;&#x6570;&#x636E;
+* @return {Promise.&lt;void&gt;}
+*/
+async doRemove(){
+  //&#x7528;&#x6CD5;&#x4E00;
+  AsyncStorage.removeItem(KEY,error=&gt;{
+      error &amp;&amp; console.log(error.toString())
+  })
+
+  //&#x7528;&#x6CD5;&#x4E8C;
+  AsyncStorage.removeItem(KEY)
+    .catch(error=&gt;{
+      error &amp;&amp; console.log(error.toString())
+    })
+
+  //&#x7528;&#x6CD5;&#x4E09;
+  try{
+    await AsyncStorage.removeItem(KEY);
+  }catch(error){
+    error &amp;&amp; console.log(error.toString())
+  }
+}
+</code></pre><p>&#x5176;&#x4F59;&#x4E00;&#x4E9B;API&#x65B9;&#x6CD5;&#x67E5;&#x770B; <a href="https://reactnative.cn/docs/asyncstorage/" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a></p>
+<h2 id="&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7B56;&#x7565;">&#x79BB;&#x7EBF;&#x7F13;&#x5B58;&#x7B56;&#x7565;</h2>
+<p><img src="assets/markdown-img-paste-2019050620405405.png" alt=""></p>
+<ul>
+<li>a:&#x4F18;&#x5148;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#x6216;&#x4E0D;&#x5B58;&#x5219;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x540E;&#x540C;&#x65F6;&#x5C06;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#xFF1B;</li>
+<li>b:&#x4F18;&#x5148;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x6570;&#x636E;&#x8FD4;&#x56DE;&#x540E;&#x540C;&#x65F6;&#x5C06;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5982;&#x679C;&#x7F51;&#x7EDC;&#x6545;&#x969C;&#x5219;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;</li>
+<li>c:&#x540C;&#x65F6;&#x4ECE;&#x672C;&#x5730;&#x548C;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;&#x8FD4;&#x56DE;&#x6570;&#x636E;&#x5219;&#x5148;&#x5C55;&#x793A;&#x672C;&#x5730;&#x6570;&#x636E;&#xFF0C;&#x7B49;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x56DE;&#x6765;&#x540E;&#x5728;&#x5C55;&#x793A;&#x7F51;&#x7EDC;&#x6570;&#x636E;&#x540C;&#x65F6;&#x5C06;&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;&#x672C;&#x5730;&#x6570;&#x636E;&#x5E93;</li>
+</ul>
+<h2 id="&#x5B9E;&#x73B0;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;a&#x7B56;&#x7565;&#xFF1A;&#x4F18;&#x5148;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#x6216;&#x4E0D;&#x5B58;&#x5219;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;">&#x5B9E;&#x73B0;&#x79BB;&#x7EBF;&#x7F13;&#x5B58;a&#x7B56;&#x7565;&#xFF1A;&#x4F18;&#x5148;&#x4ECE;&#x672C;&#x5730;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x8FC7;&#x65F6;&#x6216;&#x4E0D;&#x5B58;&#x5219;&#x4ECE;&#x670D;&#x52A1;&#x5668;&#x83B7;&#x53D6;&#x6570;&#x636E;</h2>
+<ul>
+<li>&#x4F18;&#x5148;&#x83B7;&#x53D6;&#x672C;&#x5730;&#x6570;&#x636E;</li>
+<li>&#x5982;&#x679C;&#x6570;&#x636E;&#x5B58;&#x5728;&#x4E14;&#x5728;&#x6709;&#x6548;&#x671F;&#x5185;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x6570;&#x636E;&#x8FD4;&#x56DE;</li>
+<li>&#x5426;&#x5219;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x6570;&#x636E;</li>
+</ul>
+<pre><code>import {AsyncStorage} from &quot;react-native&quot;;
+
+export default class DataStore {
+    /**
+     * &#x5B58;&#x50A8;&#x6570;&#x636E;
+     * @param url
+     * @param data
+     * @param clallback
+     */
+    saveData(url, data, clallback) {
+        if (!data || !url) return;
+        AsyncStorage.setItem(url, JSON.stringify())                //JSON.stringify&#x662F;&#x5C06;&#x4E00;&#x4E2A;javascript&#x503C;&#xFF08;&#x5BF9;&#x8C61;&#x6216;&#x8005;&#x6570;&#x7EC4;&#xFF09;&#x8F6C;&#x4E3A;js&#x5B57;&#x7B26;&#x4E32;
+    }
+
+    /**
+     * &#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4F18;&#x5148;&#x83B7;&#x53D6;&#x672C;&#x5730;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x672C;&#x5730;&#x6570;&#x636E;&#x6216;&#x672C;&#x5730;&#x6570;&#x636E;&#x8FC7;&#x671F;&#x5219;&#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x6570;&#x636E;
+     * @param url
+     * @returns {Promise&lt;any&gt; | Promise&lt;*&gt;}
+     */
+    fetchData(url) {
+        return new Promise((resolve, reject) =&gt; {
+            this.fetchLocalData(url).then(wrapData =&gt; {
+                if (wrapData &amp;&amp; DataStore.checkTimestampValid(wrapData.timestamp)) {
+                    resolve(wrapData);
+                } else {
+                    this.fetchNetData(url).then(data =&gt; {
+                        resolve(this._wrapData((data)));
+                    }).catch(error =&gt; {
+                        reject(error)
+                    })
+                }
+            }).catch(error =&gt; {
+                this.fetchNetData(url).then(data =&gt; {
+                    resolve(this._wrapData(data));
+                }).catch(error =&gt; {
+                    reject(error);
+                })
+            })
+        })
+    }
+
+    /**
+     * &#x83B7;&#x53D6;&#x672C;&#x5730;&#x6570;&#x636E;
+     * @param url
+     * @returns {Promise&lt;any&gt; | Promise&lt;*&gt;}
+     */
+    fetchLocalData(url) {
+        return new Promise((resolve, reject) =&gt; {
+            AsyncStorage.getItem(url)
+                 .then(result =&gt; {
+                     try {
+                         resolve(JSON.parse(result))
+                     } catch (e) {
+                         reject(e);
+                     }
+
+                 })
+                 .catch(error =&gt; {
+                     reject(error);
+                     console.error(error)
+                 })
+        })
+    }
+
+    /**
+     * &#x83B7;&#x53D6;&#x7F51;&#x7EDC;&#x6570;&#x636E;
+     * @param url
+     * @returns {Promise&lt;any&gt; | Promise&lt;*&gt;}
+     */
+    fetchNetData(url) {
+        return new Promise((resolve, reject) =&gt; {
+            fetch(url)
+                 .then((response) =&gt; {
+                     if (response.ok) {
+                         return response.json();
+                     }
+                     throw new error(&apos;Network response was not ok&apos;);
+                 })
+                 .then(responseData =&gt; {
+                     this.saveData(url, responseData)
+                     resolve(responseData)
+                 })
+                 .catch(error =&gt; {
+                     reject(error);
+                 })
+        })
+    }
+
+    /**
+     * &#x6570;&#x636E;&#x5305;&#x88F9;&#x65F6;&#x95F4;&#x6233;
+     * @param data
+     * @returns {{data: *, timestamp: number}}
+     * @private
+     */
+    _wrapData(data) {
+        return {
+            data,
+            timestamp: new Date().getTime()                    //&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x5230;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x65F6;&#x95F4;&#x662F;&#x4E0D;&#x53EF;&#x9760;&#x7684;&#xFF0C;&#x6709;&#x6761;&#x4EF6;&#x5E94;&#x8BE5;&#x83B7;&#x53D6;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x65F6;&#x95F4;
+        }
+    }
+
+    /**
+     * &#x68C0;&#x67E5;timestamp&#x662F;&#x5426;&#x5728;&#x6709;&#x6548;&#x671F;&#x5185;
+     * @param timestamp &#x9879;&#x76EE;&#x66F4;&#x65B0;&#x65F6;&#x95F4;
+     * @returns {boolean} true &#x4E0D;&#x9700;&#x8981;&#x66F4;&#x65B0;&#xFF0C;false&#x9700;&#x8981;&#x66F4;&#x65B0;
+     */
+    static checkTimestampValid(timestamp) {
+        const currentDate = new Date();
+        const targetDate = new Date();
+        targetDate.setTime(timestamp);
+        if (currentDate.getMonth() !== targetDate.getMonth()) return false;
+        if (currentDate.getDate() !== targetDate.getDate()) return false;
+        if (currentDate.getHours() - targetDate.getHours() &gt; 4) return false;    //&#x6709;&#x6548;&#x671F;&#x672A;4&#x5C0F;&#x65F6;
+        return true;
+    }
+
+}
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="网络编程.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 网络编程fetch">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"离线缓存设计","level":"2.9.9","depth":2,"next":{"title":"python爬虫","level":"4.1","depth":1,"ref":"","articles":[]},"previous":{"title":"网络编程fetch","level":"2.9.8","depth":2,"path":"ReactNative/网络编程.md","ref":"ReactNative/网络编程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ReactNative/离线缓存设计.md","mtime":"2019-05-06T15:41:07.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-08T08:44:30.928Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapters-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

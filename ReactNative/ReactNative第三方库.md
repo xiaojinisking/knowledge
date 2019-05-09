@@ -42,3 +42,6 @@ import  MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 ```
 
 ![](assets/markdown-img-paste-20190228144205110.png)
+
+
+## 用于显示HTML标签的组件 React-native-htmlview
