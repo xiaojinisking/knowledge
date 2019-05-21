@@ -1010,32 +1010,174 @@ const styles = StyleSheet.create({
 ```
 
 
-## 可定制的NavigationBar
-
+## 定制导航栏NavigationBar
+#### 什么是NavigationBar
+NavigationBar 分为最上面的状态栏和接下来的导航栏
 ![](assets/markdown-img-paste-2019050806265834.png)
 
+### 为什么要自定义NavigationBar
+* 我们需要一款灵活点，可扩展，易于使用，可定制程度高的NavigationBar
+* 虽然react-navigation带有导航栏的功能，但可以定制化程度低，使用不方便，扩展也不方便
 
-![](assets/markdown-img-paste-20190508062747476.png)
+### 导航栏的构成
 
-![](assets/markdown-img-paste-20190508062819362.png)
+![](assets/markdown-img-paste-20190509233753685.png)
+导航栏最主要的几部分构成分别是：
+* 以返回按钮为代表的左侧区域
+* 以标题为代表的中间区域
+* 以分享为代表的右侧区域
+
+### 实现NavigationBar
+为了满足不同点使用场景我们需要让NavigationBar包含状态栏，根据场景不同来决定是否包含状态栏
+
+>相关高度参数：要实现NavigationBar之前我们需要实现考虑的是相关组件的高度
+
+```
+const NAV_BAR_HEIGHT_IOS = 44;//导航栏在IOS对高度是44
+const NAV_BAR_HEIGHT_ANDROID = 50；//导航栏在Android中的高度
+const STATUS_BAR_HEIGHT = 20; //状态栏的高度
+```
+通常来讲导航栏的高度在Android和ios上是不同的，我们也可以根据实际需要设置不同点高度
+
+>状态栏 RN提供了StatusBar组件以方便我们来控制状态栏
 
 
-![](assets/markdown-img-paste-20190508063301678.png)
+NavigationBarz组件
+
+```
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import {StatusBar, View, ViewPropTypes, Platform, DeviceInfo,StyleSheet,Text} from "react-native";
+
+const NAV_BAR_HEIGHT_IOS = 44;//导航条在ios中的高度
+const NAV_BAR_HEIGHT_ANDROID = 50;//导航条在Android中高度
+const STATUS_BAR_HEIGHT = DeviceInfo.isIPhoneX_deprecated ? 20 : 20;//状态栏高度
+const StatusBarShape = {//设置状态栏所接受的属性
+	barStyle: PropTypes.oneOf(['light-content', 'default']),
+	hidden: PropTypes.bool,
+	backgroundColor: PropTypes.string
+}
+
+export default class NavigationBar extends Component {
+	//提供类型属性检查
+	static propTypes = {
+		style: ViewPropTypes.style,
+		title: PropTypes.string,
+		titleView: PropTypes.element,			//一个React元素
+		titleLayoutStyle: ViewPropTypes.style,
+		hide: PropTypes.bool,
+		statusBar: PropTypes.shape(StatusBarShape),	//为一个对象，且指定了属性和其类型
+		rightButton: PropTypes.element,
+		leftButton: PropTypes.element
+	}
+	//设置默认属性
+	static defaultProps = {
+		statusBar: {
+			barStyle: 'light-content',
+			hidden: false
+		}
+	}
+
+	render() {
+		let statusBar = !this.props.statusBar.hidden ?
+			 <View style={styles.statusBar}>
+				 <StatusBar  {...this.props.statusBar}/>
+			 </View> : null;
+
+		let titleView = this.props.titleView ? this.props.titleView :
+			 <Text ellipsizeMode="head" numberOfLines={1} style={styles.title}  >{this.props.title}</Text>
+
+		let content = this.props.hide ? null :
+			 <View style={styles.navBar}>
+				 {this.getButtonElement(this.props.leftButton)}
+				 <View style={[styles.navBarTitleContainer, this.props.titleLayoutStyle]}>
+					 {titleView}
+				 </View>
+				 {this.getButtonElement(this.props.rightButton)}
+			 </View>
+		return (
+			 <View style={[styles.container, this.props.style]}>
+				 {statusBar}
+				 {content}
+			 </View>
+		)
+	}
+	getButtonElement(data) {
+		return (
+			 <View style={styles.navBarButton}>
+				 {data ? data : null}
+			 </View>
+		)
+	}
+
+}
 
 
-![](assets/markdown-img-paste-20190508063332506.png)
+const styles = StyleSheet.create({
+	container: {
+		backgroundColor: '#2196f3'
+	},
+	navBarButton: {
+		alignItems: 'center'
+	},
+	navBar: {
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
+		height: Platform.OS === 'ios' ? NAV_BAR_HEIGHT_IOS : NAV_BAR_HEIGHT_ANDROID,
+	},
+	navBarTitleContainer: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		position: 'absolute',
+		left: 40,
+		right: 40,
+		top: 0,
+		bottom: 0
+	},
+	title: {
+		fontSize: 20,
+		color: 'white',
+	},
+	statusBar: {
+		height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT : 0,
+	}
+});
+```
 
+//组件的使用
+```
+import React, {Component} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 
+type Props = {};
+ export default class MyPage extends Component<Props> {
+	render() {
 
-![](assets/markdown-img-paste-20190508063459823.png)
+		let statusBar = {
+			backgroundColor:'#678',
+			barStyle:'default',
+			// hidden:true,
+		}
 
+		let navigationBar = <NavigationBar
+			 title={'我的页面'}
+			 statusBar={statusBar}
+			 style={{backgroundColor:'#678'}}
+		/>
+		return (
+			<View style={styles.container}>
+				{navigationBar}
+				<Text>内容</Tetx>
+			</View>
+		);
+	}
+}
 
-![](assets/markdown-img-paste-20190508063555849.png)
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+	},
+});
 
-![](assets/markdown-img-paste-20190508063614428.png)
-
-
-![](assets/markdown-img-paste-20190508063757698.png)
-
-
-![](assets/markdown-img-paste-20190508063839353.png)
+```
