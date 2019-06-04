@@ -73,6 +73,8 @@ taro https://coding.imooc.com/class/306.html
 * [mysql数据库 pxc](https://coding.imooc.com/class/274.html)
 * [mysql中间件mycat](https://coding.imooc.com/class/208.html)
 
+* [全面掌握MongoDB4.0 完成从小白到达人的蜕变](https://coding.imooc.com/class/324.html)
+
 # 大数据
 * [慕课日志分析大数据入门](https://coding.imooc.com/class/112.html)
 * [Hadoop基础与电商行为日志分析](https://coding.imooc.com/class/301.html)
