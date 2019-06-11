@@ -74,11 +74,20 @@ Passport::tokensCan([
 ## 授权类型（Grant Type）
 授权（ Grant ），说白了就是从资源服务器获取准入令牌（ Access token ）的方式，也可以更通俗地说成颁发令牌（ token ）的方式。一共有五种授权方式，其中四种是用来获取令牌（ Access token ）的，另一个是用来刷新、或者说重新创建一个已有令牌（ token ）的.
 
-* 认证授权（Authorization Code grant）
-* 模糊授权 （Implicit Grant）
-* 用户密码授权（Resource Ower Password Credentiais Grant）
-* 客户端资质授权（Client Credentials Grant）
-* 私人访问令牌 （Pesonal Grant）
+* **认证授权**
+  使用场景：第三方应用授权登录，第三方调到我方登录页，登录完成，跳会第三方，给她授权code,拿到授权code来请求令牌，拿到令牌来请求资源
+* **隐式授权** （Implicit Grant）
+  使用场景：常用于同一公司自有系统之间的认证，尤其是客户端应用不能安全存储令牌信息的时候。
+
+* **用户密码授权**（Resource Ower Password Credentiais Grant）
+  使用场景：允许你的一些应用，使用账号密码获取令牌。微信等一些第三方登录也可以使用这个授权方式，将openid作为账号，密码使用openid加密的串来获取令牌(https://liwei2.com/2018/07/18/2902.html)
+
+* **客户端凭证令牌**（Client Credentials Grant）
+  使用场景：适用于机器与机器之间的接口认证，类似我们做微信、微博、支付宝开放平台开发，需要先申请自己的应用，申请通过后，这些开放平台会给我们分配对应的 APP ID 和 APP SECRET。然后我们通过这个 APP ID 和 APP SECRET 去开放平台获取 Token（令牌），最后拿着这个令牌去访问认证资源即可。
+
+* **私人访问令牌** （Pesonal Grant）
+  使用场景：这种授权方式比较特殊，不需要授权码，也不需要用户输入登录凭证，而是用户给自己颁发访问令牌。这种授权方式在用户测试、体验平台提供的认证 API 接口时非常方便，比如微信开放平台和支付宝开发平台都有沙箱测试模式，在这种测试模式下获取授权令牌的方式其实就是通过私人访问令牌来实现的。
+
 * 令牌刷新授权 （Refresh token grant）
 
 
@@ -154,14 +163,107 @@ oauth/authorize 通过后，则回调client的地址
 重新整理 认证授权 这种方式
 ![](assets/markdown-img-paste-20190604001146697.png)
 
+### 2:隐式授权
+隐式授权令牌和通过授权码获取令牌有点类似，不过，它不需要获取授权码，就可以将令牌返回给客户端，通常适用于同一个公司自有系统之间的认证，尤其是客户端应用不能安全存储令牌信息的时候。
+
+[隐式授权](https://laravelacademy.org/post/9760.html)
+
+
 
 ### 3:用户密码授权
 OAuth2 密码授权允许你的其他第一方客户端，例如移动应用，使用邮箱地址/用户名+密码获取访问令牌。这使得你可以安全地颁发访问令牌给第一方客户端而不必要求你的用户走整个 OAuth2 授权码重定向流程。
 
-
 ![](assets/markdown-img-paste-20190604212518668.png)
 
+①：创建一个密码授权客户端
+你可以通过使用带 --password 选项的 passport:client 命令来实现。如果你已经运行了 passport:install 命令，则不必再运行这个命令：
 
+```
+php artisan passport:client --password
+```
+>注意生成的密码授权客户端是在 oauth_clients表中password_cleint 为1的才是哦
+
+![](assets/markdown-img-paste-20190604213526346.png)
+
+
+②：请求令牌
+请求：/oauth/token  地址
+
+grant_type 为 password
+
+client_id 和 client_secret 为oauth_clients表中password_cleint 为1的 客户端
+
+username 和 password为用户表单账号和密码
+![](assets/markdown-img-paste-20190604214439344.png)
+
+
+![](assets/markdown-img-paste-20190604225228445.png)
+
+当使用密码授权进行认证的时候，Passport 会使用模型的 email 属性作为「用户名」。不过，你可以通过在模型上定义 findForPassport 方法来自定义这一默认行为：
+
+![](assets/markdown-img-paste-20190604215309884.png)
+
+ * 重置验证username字段
+所以我们在对应使用到user模型中重写findForPassport()方法
+
+```
+//仿造email的写法
+public function findForPassport($username)
+{
+    return $this->where('username', $username)->first();
+}
+```
+* 重置验证password字段，如果密码不需要重置
+```
+public function validateForPassportPasswordGrant($password)
+ {
+     //如果请求密码等于数据库密码 返回true（此为实例，根据自己需求更改）
+     if($password == $this->password){
+         return true;
+     }
+     return false;
+ }
+```
+
+### 4：客户端凭证令牌
+适用于机器与机器之间的接口认证，类似我们做微信、微博、支付宝开放平台开发，需要先申请自己的应用，申请通过后，这些开放平台会给我们分配对应的 APP ID 和 APP SECRET。然后我们通过这个 APP ID 和 APP SECRET 去开放平台获取 Token（令牌），最后拿着这个令牌去访问认证资源即可。
+
+①：创建客户端
+ 命令时添加 --client 选项来实现
+```
+php artisan passport:client --client
+```
+
+②请求令牌
+
+grant_type 为client_credentials
+
+client_id 和 client_secret 为oauth_clients表中password_cleint 为1的 客户端
+![](assets/markdown-img-paste-20190604225433457.png)
+
+③：要使用这个方法，需要在 app/Http/Kernel.php 中添加新的中间件 CheckClientCredentials 到 $routeMiddleware：
+```
+use Laravel\Passport\Http\Middleware\CheckClientCredentials;
+
+protected $routeMiddleware = [
+    'client' => CheckClientCredentials::class,
+];
+```
+然后将这个中间件应用到路由：
+
+```
+
+Route::get('/orders', function(Request $request) {
+    ...
+})->middleware('client');
+```
+
+要限定对特定路由域的访问，可以在添加 client 中间件到路由时提供一个以逗号分隔的域列表：
+```
+Route::get('/orders', function (Request $request) {
+    ...
+})->middleware('client:check-status,your-scope');
+```
 ### 5：私人访问令牌
 这种授权方式比较特殊，不需要授权码，也不需要用户输入登录凭证，而是用户给自己颁发访问令牌。
 
@@ -243,3 +345,18 @@ X-Requested-With header信息是设置当前为ajax请求
   ![](assets/markdown-img-paste-20190604165312525.png)
 
   依次类推，你还可以访问开放平台其它需要认证的 API 接口。
+
+
+  ### 6：刷新令牌
+  如果应用颁发的是短期有效的访问令牌，那么用户需要通过访问令牌颁发时提供的 refresh_token 刷新访问令牌
+
+  grant_type 为refresh_token
+
+  ![](assets/markdown-img-paste-2019060423085361.png)
+
+/oauth/token 路由会返回一个包含 access_token 、 refresh_token 和 expires_in 属性的 JSON 响应，同样， expires_in 属性包含访问令牌过期时间（s）
+
+
+## 多表多字段认证解决方案
+[Laravel Passport认证-多表、多字段解决方案](https://blog.csdn.net/woqianduo/article/details/81782799)
+[Laravel 的 API 认证系统 Passport 三部曲(二、passport的具体使用)--多表验证](https://www.jianshu.com/p/5c1d6479b407)
