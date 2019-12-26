@@ -13,12 +13,15 @@ https://juejin.im/entry/59dd786cf265da431d3ba6e3
 
 * [文档地址](https://github.com/oblador/react-native-vector-icons)
 * [库查询地址](https://oblador.github.io/react-native-vector-icons/)
+* [修改提示-Unrecognized font family ‘Ionicons’](https://blog.csdn.net/zhaolaoda2012/article/details/82627735)
 
 基本使用
 
 ```
 yarn add react-native-vector-icons
 react-native link react-native-vector-icons
+
+ios的需要cd ios  然后执行 pod install
 ```
 
 引入不同类型的Icon库
@@ -45,3 +48,11 @@ import  MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 
 ## 用于显示HTML标签的组件 React-native-htmlview
+
+
+
+
+
+## 轮播 react-native-swiper
+[github](https://github.com/leecade/react-native-swiper)
+[android上报错ViewPagerAndroid修复](https://blog.csdn.net/weixin_43762903/article/details/102794751) 或升级到最新开发版

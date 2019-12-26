@@ -21,6 +21,13 @@ yarn add redux-devtools
 
 [react-redux文档](http://cn.redux.js.org/docs/react-redux/)
 
+[Redux文档](https://redux-docs.netlify.com/)
+
+[React-redux文档](https://react-redux.js.org/)
+
+### 安装store
+
+
 
 ## React Native中使用了react-navigation 后如何与redux组合使用
 
@@ -130,7 +137,10 @@ export default createStore(
 ```
 
 
-## 处理android中的物理返回键
+## 处理android中的物理返回键，在首页按返回退出去
+
+可以在这里增加一些询问框这种效果，用户确认退出，我们在退出
+
 [文档出处：](https://github.com/react-navigation/redux-helpers)
 
 ```

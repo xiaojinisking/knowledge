@@ -81,11 +81,12 @@ taro https://coding.imooc.com/class/306.html
 * [优惠券系统，大数据存储Hbase](https://coding.imooc.com/class/254.html)
 
 # docker
+* [Kubernetes（k8s）生产级实践指南从部署到核心应用](https://coding.imooc.com/class/335.html)
 * [Docker+Kubernetes(k8s)微服务容器化实践----第7节（看这个））](https://coding.imooc.com/class/198.html)
 * [DevOps理论＋实践之路](https://coding.imooc.com/class/266.html)
 * [系统学习Docker 践行DevOps理念](https://coding.imooc.com/class/189.html)
 * [Docker环境下的前后端分离项目部署与运维](https://coding.imooc.com/class/chapter/219.html#Anchor)
-* [Kubernetes（k8s）生产级实践指南从部署到核心应用](https://coding.imooc.com/class/335.html)
+
 
 # nginx
 * [nginx 企业级应用](https://coding.imooc.com/class/121.html)

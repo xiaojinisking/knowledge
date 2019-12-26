@@ -1,0 +1,1966 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>RPC通讯 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapters-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-emphasize/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-treeview/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-page-toc-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="服务注册和发现.html" />
+    
+    
+    <link rel="prev" href="热重载.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">前端</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../study.html">
+            
+                <a href="../study.html">
+            
+                    
+                    学习进度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../前端/手册.html">
+            
+                <a href="../前端/手册.html">
+            
+                    
+                    手册
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../前端/Mock.html">
+            
+                <a href="../前端/Mock.html">
+            
+                    
+                    Mock
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../前端/测试.html">
+            
+                <a href="../前端/测试.html">
+            
+                    
+                    测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../ES6/">
+            
+                <a href="../ES6/">
+            
+                    
+                    ES6
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../ES6/项目构建.html">
+            
+                <a href="../ES6/项目构建.html">
+            
+                    
+                    项目构建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.2" data-path="../ES6/Let和Const命令.html">
+            
+                <a href="../ES6/Let和Const命令.html">
+            
+                    
+                    Let和Const命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.3" data-path="../ES6/字符串扩展.html">
+            
+                <a href="../ES6/字符串扩展.html">
+            
+                    
+                    字符串扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.4" data-path="../ES6/变量的解构赋值.md">
+            
+                <span>
+            
+                    
+                    变量的解构赋值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.5" data-path="../ES6/数值的扩展.md">
+            
+                <span>
+            
+                    
+                    数值的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.6" data-path="../ES6/数组的扩展.md">
+            
+                <span>
+            
+                    
+                    数组的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.7" data-path="../ES6/函数的扩展.html">
+            
+                <a href="../ES6/函数的扩展.html">
+            
+                    
+                    函数的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.8" data-path="../ES6/对象的扩展.html">
+            
+                <a href="../ES6/对象的扩展.html">
+            
+                    
+                    对象的扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.9" data-path="../ES6/Symbol数据类型.html">
+            
+                <a href="../ES6/Symbol数据类型.html">
+            
+                    
+                    Symbol数据类型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.10" data-path="../ES6/Set和Map数据结构.html">
+            
+                <a href="../ES6/Set和Map数据结构.html">
+            
+                    
+                    Set和Map数据结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.11" data-path="../ES6/Proxy和Reflect.html">
+            
+                <a href="../ES6/Proxy和Reflect.html">
+            
+                    
+                    Proxy和Reflect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.12" data-path="../ES6/Promise.html">
+            
+                <a href="../ES6/Promise.html">
+            
+                    
+                    Promise
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.13" data-path="../ES6/Iterator遍历器和for...of循环.html">
+            
+                <a href="../ES6/Iterator遍历器和for...of循环.html">
+            
+                    
+                    遍历器Iterator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.14" data-path="../ES6/Genetor.html">
+            
+                <a href="../ES6/Genetor.html">
+            
+                    
+                    Genetor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.15" data-path="../ES6/修饰器.html">
+            
+                <a href="../ES6/修饰器.html">
+            
+                    
+                    修饰器Decorator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3.16" data-path="../ES6/模块化.html">
+            
+                <a href="../ES6/模块化.html">
+            
+                    
+                    模块化Module
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../Webpack/">
+            
+                <a href="../Webpack/">
+            
+                    
+                    Webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../React/">
+            
+                <a href="../React/">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../React/Es6,Es7,Es8介绍.md">
+            
+                <span>
+            
+                    
+                    Es6,Es7,Es8介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../React/react基础知识.html">
+            
+                <a href="../React/react基础知识.html">
+            
+                    
+                    react基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../React/React的开发调试工具.html">
+            
+                <a href="../React/React的开发调试工具.html">
+            
+                    
+                    React的开发调试工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../React/JSX.html">
+            
+                <a href="../React/JSX.html">
+            
+                    
+                    JSX介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../React/元素.html">
+            
+                <a href="../React/元素.html">
+            
+                    
+                    元素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../React/组件.html">
+            
+                <a href="../React/组件.html">
+            
+                    
+                    组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" data-path="../React/组件属性props.html">
+            
+                <a href="../React/组件属性props.html">
+            
+                    
+                    组件属性props
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../React/组件的状态state.html">
+            
+                <a href="../React/组件的状态state.html">
+            
+                    
+                    组件状态state
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" data-path="../React/组件属性ref.html">
+            
+                <a href="../React/组件属性ref.html">
+            
+                    
+                    组件属性ref
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" data-path="../React/组件的生命周期.html">
+            
+                <a href="../React/组件的生命周期.html">
+            
+                    
+                    组件生命周期
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../React/事件处理.html">
+            
+                <a href="../React/事件处理.html">
+            
+                    
+                    事件处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../React/表单.html">
+            
+                <a href="../React/表单.html">
+            
+                    
+                    表单
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../React/列表&keys.html">
+            
+                <a href="../React/列表&keys.html">
+            
+                    
+                    列表&keys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../React/状态提升.html">
+            
+                <a href="../React/状态提升.html">
+            
+                    
+                    状态提升
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" data-path="../React/高阶组件.html">
+            
+                <a href="../React/高阶组件.html">
+            
+                    
+                    高阶组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.16" data-path="../React/content.md">
+            
+                <span>
+            
+                    
+                    content
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.17" data-path="../React/Reconciliation(协调,diff算法,DOM">
+            
+                <span>
+            
+                    
+                    Reconciliation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.18" data-path="../React/React测试.md">
+            
+                <span>
+            
+                    
+                    React测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../Redux/Redux.html">
+            
+                <a href="../Redux/Redux.html">
+            
+                    
+                    Redux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../Redux/redux介绍.html">
+            
+                <a href="../Redux/redux介绍.html">
+            
+                    
+                    redux介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../Redux/Redux.html">
+            
+                <a href="../Redux/Redux.html">
+            
+                    
+                    redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../Redux/Action.html">
+            
+                <a href="../Redux/Action.html">
+            
+                    
+                    Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../Redux/Reducer.html">
+            
+                <a href="../Redux/Reducer.html">
+            
+                    
+                    Reducer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.5" data-path="../Redux/Store.html">
+            
+                <a href="../Redux/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.6" data-path="../Redux/React-Redux.html">
+            
+                <a href="../Redux/React-Redux.html">
+            
+                    
+                    React-Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.7" data-path="../Redux/Reducer高级.html">
+            
+                <a href="../Redux/Reducer高级.html">
+            
+                    
+                    Reducer高级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.8" data-path="../Redux/异步Action.html">
+            
+                <a href="../Redux/异步Action.html">
+            
+                    
+                    异步Action
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.9" data-path="../Redux/数据流.html">
+            
+                <a href="../Redux/数据流.html">
+            
+                    
+                    数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.10" data-path="../Redux/异步数据流.html">
+            
+                <a href="../Redux/异步数据流.html">
+            
+                    
+                    异步数据流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.11" data-path="../Redux/State结构设计.html">
+            
+                <a href="../Redux/State结构设计.html">
+            
+                    
+                    State结构设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.12" data-path="../Redux/Todolist.html">
+            
+                <a href="../Redux/Todolist.html">
+            
+                    
+                    实例TodoList
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../NodeJs/">
+            
+                <a href="../NodeJs/">
+            
+                    
+                    NodeJs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../NodeJs/简介.html">
+            
+                <a href="../NodeJs/简介.html">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../NodeJs/开发环境.html">
+            
+                <a href="../NodeJs/开发环境.html">
+            
+                    
+                    开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.3" data-path="../NodeJs/调试.html">
+            
+                <a href="../NodeJs/调试.html">
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../Taro/">
+            
+                <a href="../Taro/">
+            
+                    
+                    Taro
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="../ReactNative/">
+            
+                <a href="../ReactNative/">
+            
+                    
+                    ReactNative
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.9.1" data-path="../ReactNative/开发环境搭建.html">
+            
+                <a href="../ReactNative/开发环境搭建.html">
+            
+                    
+                    开发环境搭建
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.2" data-path="../ReactNative/React-Native布局.html">
+            
+                <a href="../ReactNative/React-Native布局.html">
+            
+                    
+                    ReactNative布局
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.3" data-path="../ReactNative/ReactNative列表.html">
+            
+                <a href="../ReactNative/ReactNative列表.html">
+            
+                    
+                    ReactNative列表组件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.4" data-path="../ReactNative/ReactNavigation导航器.html">
+            
+                <a href="../ReactNative/ReactNavigation导航器.html">
+            
+                    
+                    ReactNavtive导航器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.5" data-path="../ReactNative/ReactNative与Redux整合.html">
+            
+                <a href="../ReactNative/ReactNative与Redux整合.html">
+            
+                    
+                    ReactNative与Redux整合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.6" data-path="../ReactNative/调试.html">
+            
+                <a href="../ReactNative/调试.html">
+            
+                    
+                    ReactNative调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.7" data-path="../ReactNative/ReactNative第三方库.html">
+            
+                <a href="../ReactNative/ReactNative第三方库.html">
+            
+                    
+                    ReactNative第三方库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.8" data-path="../ReactNative/网络编程.html">
+            
+                <a href="../ReactNative/网络编程.html">
+            
+                    
+                    网络编程fetch
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.9" data-path="../ReactNative/离线缓存设计.html">
+            
+                <a href="../ReactNative/离线缓存设计.html">
+            
+                    
+                    离线缓存设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.10" data-path="../ReactNative/调试.html">
+            
+                <a href="../ReactNative/调试.html">
+            
+                    
+                    调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.11" data-path="../ReactNative/RN中IOS原生开发.html">
+            
+                <a href="../ReactNative/RN中IOS原生开发.html">
+            
+                    
+                    RN中IOS原生开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.12" data-path="../ReactNative/RN中ANDROID原生开发.html">
+            
+                <a href="../ReactNative/RN中ANDROID原生开发.html">
+            
+                    
+                    RN中ANDROID原生开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9.13" data-path="../ReactNative/热更新.html">
+            
+                <a href="../ReactNative/热更新.html">
+            
+                    
+                    热更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">产品设计</li>
+        
+        
+    
+
+    
+        
+        <li class="header">服务端</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    python爬虫
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    swoole
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">搜索引擎</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    elasticsearch
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">微服务</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../微服务/">
+            
+                <a href="../微服务/">
+            
+                    
+                    微服务
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../微服务/概要.html">
+            
+                <a href="../微服务/概要.html">
+            
+                    
+                    概要
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.1.2" data-path="../微服务/consul.html">
+            
+                <a href="../微服务/consul.html">
+            
+                    
+                    consul
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Swoft
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="安装.html">
+            
+                <a href="安装.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="容器.html">
+            
+                <a href="容器.html">
+            
+                    
+                    容器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.3" data-path="网络请求.html">
+            
+                <a href="网络请求.html">
+            
+                    
+                    网络请求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.4" data-path="注解.html">
+            
+                <a href="注解.html">
+            
+                    
+                    注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.5" data-path="热重载.html">
+            
+                <a href="热重载.html">
+            
+                    
+                    热重载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.2.6" data-path="RPC通讯.html">
+            
+                <a href="RPC通讯.html">
+            
+                    
+                    RPC通讯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.7" data-path="服务注册和发现.html">
+            
+                <a href="服务注册和发现.html">
+            
+                    
+                    服务注册和发现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.8" data-path="熔断降级.html">
+            
+                <a href="熔断降级.html">
+            
+                    
+                    熔断降级
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.9" data-path="服务限流.html">
+            
+                <a href="服务限流.html">
+            
+                    
+                    服务限流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.10" data-path="配置中心.html">
+            
+                <a href="配置中心.html">
+            
+                    
+                    配置中心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.11" data-path="链路追踪.html">
+            
+                <a href="链路追踪.html">
+            
+                    
+                    链路追踪
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">大数据</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" >
+            
+                <span>
+            
+                    
+                    大数据
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">数据库</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    mysql
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">运营</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="../vagrant/">
+            
+                <a href="../vagrant/">
+            
+                    
+                    vagrant
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="../docker/">
+            
+                <a href="../docker/">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">项目</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" >
+            
+                <span>
+            
+                    
+                    [电商]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RPC通讯</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="treeview__container"><ul>
+<li><div><a href="#rpc-&#x901A;&#x8BAF;&#x8C03;&#x7528;">RPC &#x901A;&#x8BAF;&#x8C03;&#x7528;</a><i class="level__parent level__item level__parent--opened" state="opened" onclick="var curState = this.getAttribute(&apos;state&apos;);var nextState = curState === &apos;opened&apos; ? &apos;hidden&apos; : &apos;opened&apos;;this.setAttribute(&apos;state&apos;, nextState);this.className = this.className.split(curState).join(nextState);var list = this.parentNode.nextElementSibling;if (nextState === &apos;hidden&apos;) {    list.style.display = &apos;none&apos;;} else {    list.style.display = &apos;block&apos;;}"></i></div>
+<ul>
+<li><div><a href="#&#x4EC0;&#x4E48;&#x662F;rpc">&#x4EC0;&#x4E48;&#x662F;RPC</a><i></i></div></li>
+<li><div><a href="#&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;rpc">&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;RPC</a><i></i></div></li>
+<li><div><a href="#rpc&#x8C03;&#x7528;&#x5206;&#x7C7B;">RPC&#x8C03;&#x7528;&#x5206;&#x7C7B;</a><i></i></div></li>
+<li><div><a href="#&#x5982;&#x4F55;&#x8C03;&#x7528;&#x4ED6;&#x4EBA;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;">&#x5982;&#x4F55;&#x8C03;&#x7528;&#x4ED6;&#x4EBA;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;</a><i></i></div></li>
+<li><div><a href="#rpc&#x7684;-tcp&#x534F;&#x8BAE;&#x7684;&#x7B80;&#x5355;&#x5B9E;&#x73B0;">RPC&#x7684; TCP&#x534F;&#x8BAE;&#x7684;&#x7B80;&#x5355;&#x5B9E;&#x73B0;</a><i></i></div></li>
+<li><div><a href="#swoft&#x4E2D;&#x7684;rpc&#x4F7F;&#x7528;">swoft&#x4E2D;&#x7684;RPC&#x4F7F;&#x7528;</a><i></i></div></li>
+</ul></li>
+</ul>
+</div>
+
+<h1 id="rpc-&#x901A;&#x8BAF;&#x8C03;&#x7528;">RPC &#x901A;&#x8BAF;&#x8C03;&#x7528;</h1>
+<h2 id="&#x4EC0;&#x4E48;&#x662F;rpc">&#x4EC0;&#x4E48;&#x662F;RPC</h2>
+<p>RPC&#xFF0C;&#x662F;&#x4E00;&#x79CD;<strong><big>&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#x65B9;&#x5F0F;</big></strong>(Remote Procedure Call),&#x901A;&#x8FC7;RPC&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x50CF;&#x8C03;&#x7528;&#x672C;&#x5730;&#x4E00;&#x6837;&#x8C03;&#x7528;&#x522B;&#x7684;&#x673A;&#x5668;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6237;&#x5C06;&#x65E0;&#x611F;&#x77E5;&#x670D;&#x52A1;&#x5668;&#x4E0E;&#x670D;&#x52A1;&#x5668;&#x4E4B;&#x95F4;&#x901A;&#x8BAF;&#x3002;</p>
+<p>RPC&#x6700;&#x4E3B;&#x8981;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x670D;&#x52A1;&#x8C03;&#x7528;&#xFF0C;&#x8C03;&#x7528;&#x8005;&#x548C;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#x3002;</p>
+<h2 id="&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;rpc">&#x4E3A;&#x4EC0;&#x4E48;&#x9700;&#x8981;RPC</h2>
+<blockquote>
+<p>&#x5355;&#x4F53;&#x67B6;&#x6784;&#x7684;&#x7F3A;&#x70B9;</p>
+</blockquote>
+<ul>
+<li>&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF0C;&#x5BF9;&#x4E8E;php&#x8FD8;&#x597D;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;java&#x7684;&#x9879;&#x76EE;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6253;&#x5305;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x8017;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x662F;&#x5F88;&#x957F;&#x7684;</li>
+<li>&#x4EE3;&#x7801;&#x7EF4;&#x62A4;&#xFF0C;&#x7531;&#x4E8E;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7801;&#x90FD;&#x5199;&#x5728;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x91CC;&#xFF0C;&#x8981;&#x60F3;&#x4FEE;&#x6539;&#x67D0;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x5BF9;&#x9879;&#x76EE;&#x7684;&#x6574;&#x4F53;&#x903B;&#x8F91;&#x548C;&#x8BBE;&#x8BA1;&#x6709;&#x8F83;&#x6DF1;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x5426;&#x5219;&#x4EE3;&#x7801;&#x8026;&#x5408;&#x4E25;&#x91CD;&#xFF0C;&#x5BFC;&#x81F4;&#x7EF4;&#x62A4;&#x96BE;</li>
+<li>&#x5F00;&#x53D1;&#x6548;&#x7387;&#xFF0C;&#x968F;&#x7740;&#x9879;&#x76EE;&#x9700;&#x6C42;&#x7684;&#x4E0D;&#x65AD;&#x53D8;&#x5316;&#x548C;&#x65B0;&#x529F;&#x80FD;&#x7684;&#x65B0;&#x589E;&#xFF0C;&#x8001;&#x65E7;&#x7684;&#x4EE3;&#x7801;&#x53C8;&#x4E0D;&#x6562;&#x968F;&#x4FBF;&#x5220;&#x9664;&#xFF0C;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x53D8;&#x5F97;&#x7B28;&#x91CD;&#xFF0C;&#x8FD9;&#x5C06;&#x589E;&#x52A0;&#x4F60;&#x7684;&#x9605;&#x8BFB;&#x4EE3;&#x7801;&#x7684;&#x65F6;&#x95F4;</li>
+<li>&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x5728;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x4E0D;&#x662F;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x90FD;&#x5904;&#x4E8E;&#x9AD8;&#x6D41;&#x91CF;&#x7684;&#x8BF7;&#x6C42;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5355;&#xFF0C;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x90FD;&#x662F;&#x67D0;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x6A21;&#x5757;&#x7684;&#x4F7F;&#x7528;&#x4EBA;&#x6570;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x5728;&#x5355;&#x4F53;&#x67B6;&#x6784;&#x4E0B;&#x6211;&#x4EEC;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x9488;&#x5BF9;&#x5355;&#x4E2A;&#x529F;&#x80FD;&#x5B9E;&#x73B0;&#x5206;&#x5E03;&#x5F0F;&#x6269;&#x5C55;&#xFF0C;&#x5FC5;&#x987B;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x4E00;&#x8D77;&#x90E8;&#x7F72;&#x3002;</li>
+</ul>
+<blockquote>
+<p>&#x5FAE;&#x670D;&#x52A1;</p>
+</blockquote>
+<p>&#x5FAE;&#x670D;&#x52A1;&#x662F;&#x4E00;&#x79CD;&#x67B6;&#x6784;&#x8BBE;&#x8BA1;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x8BF4;&#x4EC0;&#x4E48;&#x6846;&#x67B6;&#x6216;&#x8005;&#x4EE3;&#x66FF;&#x4EC0;&#x4E48;&#x3002;&#x5FAE;&#x670D;&#x52A1;&#x505A;&#x7684;&#x4E8B;&#x60C5;&#x662F;&#x6309;&#x7167;&#x9879;&#x76EE;&#x9897;&#x7C92;&#x5EA6;&#x8FDB;&#x884C;&#x670D;&#x52A1;&#x7684;&#x62C6;&#x5206;&#xFF0C;&#x628A;&#x6A21;&#x5757;&#x5355;&#x72EC;&#x62FF;&#x51FA;&#x6765;&#x505A;&#x6210;&#x6BCF;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x5C0F;&#x9879;&#x76EE;</p>
+<p>&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x4E3B;&#x8981;&#x7279;&#x70B9;&#x6709;&#xFF1A;&#x6BCF;&#x4E00;&#x4E2A;&#x529F;&#x80FD;&#x6A21;&#x5757;&#x662F;&#x4E00;&#x4E2A;&#x5C0F;&#x9879;&#x76EE;&#x3001;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x6216;&#x8005;&#x673A;&#x5668;&#x4E0A;&#x3001;&#x4E0D;&#x540C;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x53C8;&#x4E0D;&#x540C;&#x7684;&#x4EBA;&#x5458;&#x5F00;&#x53D1;&#x72EC;&#x7ACB;&#x5F00;&#x53D1;&#x4E0D;&#x677E;&#x8026;&#x5408;&#x3001;&#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;&#x6574;&#x4F53;&#x9879;&#x76EE;&#x5C31;&#x53EF;&#x4EE5;&#x542F;&#x52A8;&#x5355;&#x4E2A;&#x670D;&#x52A1;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x7BA1;&#x7406;&#x3002;&#x6BCF;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x53EA;&#x8981;&#x505A;&#x597D;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x60C5;&#x5C31;&#x597D;&#x4E86;&#x3002;&#x5728;&#x8BBE;&#x8BA1;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x9700;&#x8981;&#x8003;&#x8651;&#x5230;&#x6570;&#x636E;&#x5E93;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x662F;&#x6240;&#x6709;&#x5FAE;&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x5171;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#x8FD8;&#x662F;&#x6BCF;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5355;&#x4E2A;&#x6570;&#x636E;&#x5E93;</p>
+<blockquote>
+<p>&#x5FAE;&#x670D;&#x52A1;&#x4F18;&#x70B9;&#xFF1A;</p>
+</blockquote>
+<ul>
+<li><p>&#x62C6;&#x5206;&#x4E1A;&#x52A1;&#xFF0C;&#x628A;&#x6574;&#x4F53;&#x5927;&#x9879;&#x76EE;&#x5206;&#x5272;&#x6210;&#x4E0D;&#x540C;&#x5C0F;&#x9879;&#x76EE;&#x8FD0;&#x884C;&#x5728;&#x4E0D;&#x540C;&#x8FDB;&#x7A0B;&#x6216;&#x8005;&#x673A;&#x5668;&#x4E0A;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x9694;&#x79BB;
+&#x6280;&#x672F;&#x6808;&#xFF0C;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x7531;&#x4E0D;&#x540C;&#x7684;&#x56E2;&#x961F;&#x6216;&#x8005;&#x5F00;&#x53D1;&#x8005;&#x8FDB;&#x884C;&#x5F00;&#x53D1;&#xFF0C;&#x5916;&#x90E8;&#x8C03;&#x7528;&#x4EBA;&#x5458;&#x4E0D;&#x9700;&#x8981;&#x64CD;&#x5FC3;&#x5177;&#x4F53;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7C7B;&#x4F3C;&#x8C03;&#x7528;&#x81EA;&#x5DF1;&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#x6216;&#x8005;&#x63A5;&#x53E3;&#x4E00;&#x6837;&#x6309;&#x7167;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x8005;&#x7ED9;&#x51FA;&#x6765;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x5373;&#x53EF;</p>
+</li>
+<li><p>&#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#xFF0C;&#x90E8;&#x7F72;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x6574;&#x4F53;&#x9879;&#x76EE;&#xFF0C;&#x5982;&#x679C;&#x90E8;&#x7F72;&#x5931;&#x8D25;&#x6700;&#x591A;&#x662F;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x529F;&#x80FD;&#x7F3A;&#x5931;&#xFF0C;&#x5E76;&#x4E0D;&#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x7684;&#x4F7F;&#x7528;</p>
+</li>
+<li>&#x6309;&#x9700;&#x90E8;&#x7F72;&#xFF0C;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x9700;&#x6C42;&#x53EF;&#x4EE5;&#x7ED9;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x81EA;&#x7531;&#x6269;&#x5C55;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x6839;&#x636E;&#x670D;&#x52A1;&#x7684;&#x89C4;&#x6A21;&#x90E8;&#x7F72;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#x7684;&#x5B9E;&#x4F8B;</li>
+<li>&#x5C40;&#x90E8;&#x4FEE;&#x6539;&#xFF0C;&#x5F53;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x6709;&#x65B0;&#x9700;&#x6C42;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x6574;&#x4F53;&#x9879;&#x76EE;&#x53EA;&#x8981;&#x7BA1;&#x597D;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5C31;&#x597D;&#x4E86;</li>
+</ul>
+<blockquote>
+<p>&#x5FAE;&#x670D;&#x52A1;&#x7F3A;&#x70B9;</p>
+</blockquote>
+<ul>
+<li>&#x8FD0;&#x7EF4;&#xFF0C;&#x5FAE;&#x670D;&#x52A1;&#x7531;&#x4E8E;&#x628A;&#x4E1A;&#x52A1;&#x62C6;&#x5206;&#x5F97;&#x7EC6;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x90E8;&#x7F72;&#x5728;&#x4E0D;&#x540C;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x8FD0;&#x7EF4;&#x4EBA;&#x5458;&#x7684;&#x7BA1;&#x7406;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x7684;&#x6210;&#x672C;&#x4F1A;&#x52A0;&#x5927;</li>
+<li>&#x63A5;&#x53E3;&#x8C03;&#x6574;&#xFF0C;&#x5FAE;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x63A5;&#x53E3;&#x8FDB;&#x884C;&#x901A;&#x4FE1;&#x3002;&#x5982;&#x679C;&#x4FEE;&#x6539;&#x67D0;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x7684;API&#xFF0C;&#x53EF;&#x80FD;&#x6240;&#x6709;&#x4F7F;&#x7528;&#x4E86;&#x8BE5;&#x63A5;&#x53E3;&#x7684;&#x5FAE;&#x670D;&#x52A1;&#x90FD;&#x9700;&#x8981;&#x505A;&#x8C03;&#x6574;&#xFF1B;</li>
+<li>&#x91CD;&#x590D;&#x52B3;&#x52A8;&#xFF0C;&#x5F88;&#x591A;&#x670D;&#x52A1;&#x53EF;&#x80FD;&#x90FD;&#x4F1A;&#x4F7F;&#x7528;&#x5230;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;&#x800C;&#x8FD9;&#x4E2A;&#x529F;&#x80FD;&#x5E76;&#x6CA1;&#x6709;&#x8FBE;&#x5230;&#x5206;&#x89E3;&#x4E3A;&#x4E00;&#x4E2A;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x7A0B;&#x5EA6;&#xFF0C;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x5404;&#x4E2A;&#x670D;&#x52A1;&#x90FD;&#x4F1A;&#x5F00;&#x53D1;&#x8FD9;&#x4E00;&#x529F;&#x80FD;&#xFF0C;&#x5BFC;&#x81F4;&#x4EE3;&#x7801;&#x91CD;&#x590D;&#x3002;</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#xFF0C;&#x7531;&#x4E8E;&#x4F1A;&#x628A;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x90E8;&#x7F72;&#x5728;&#x4E0D;&#x540C;&#x673A;&#x5668;&#x4E0A;&#xFF0C;&#x90A3;&#x4E48;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E9B;&#x670D;&#x52A1;&#x7684;&#x8C03;&#x7528;&#x3001;&#x5BB9;&#x9519;&#x3001;&#x7F51;&#x7EDC;&#x5EF6;&#x8FDF;&#x3001;&#x5206;&#x5E03;&#x5F0F;&#x4E8B;&#x52A1;&#x7B49;&#x7B49;&#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x6311;&#x6218;&#xFF0C;&#x5F53;&#x7136;&#x5FAE;&#x670D;&#x52A1;&#x4E0D;&#x4E00;&#x5B9A;&#x5168;&#x90E8;&#x90FD;&#x662F;&#x90E8;&#x7F72;&#x5728;&#x4E0D;&#x540C;&#x670D;&#x52A1;&#x5668;&#x4E0A;</li>
+</ul>
+<h2 id="rpc&#x8C03;&#x7528;&#x5206;&#x7C7B;">RPC&#x8C03;&#x7528;&#x5206;&#x7C7B;</h2>
+<p>RPC&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x53EF;&#x57FA;&#x4E8E;TCP&#x3001;UDP&#x6216;&#x8005;HTTP&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x662F;&#x6700;&#x63A8;&#x8350;&#x9009;&#x62E9;TCP&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x4F53;&#x770B;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x6BD4;&#x8F83;&#x4E0B;RPC&#x8C03;&#x7528;&#x548C;RESFUL API&#x8C03;&#x7528;&#x7684;&#x533A;&#x522B;</p>
+<ul>
+<li>TCP &#x652F;&#x6301;&#x957F;&#x8FDE;&#x63A5;&#xFF0C;&#x5F53;&#x8C03;&#x7528;&#x670D;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x4E0D;&#x9700;&#x8981;&#x6BCF;&#x6B21;&#x90FD;&#x8FDB;&#x884C;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x624D;&#x5B9E;&#x73B0;&#x3002;&#x4ECE;&#x6027;&#x80FD;&#x548C;&#x7F51;&#x7EDC;&#x6D88;&#x8017;&#x6765;&#x8BF4;&#x90FD;&#x5177;&#x5907;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x4F18;&#x52BF;&#x3002;</li>
+<li>RESTful API&#x57FA;&#x4E8E;HTTP&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6BCF;&#x6B21;&#x8C03;&#x7528;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4E09;&#x6B21;&#x63E1;&#x624B;&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#x3002;&#x4ECE;&#x6027;&#x80FD;&#x548C;&#x7F51;&#x7EDC;&#x6D88;&#x8017;&#x6765;&#x8BF4;RPC&#x90FD;&#x5177;&#x5907;&#x4E86;&#x5F88;&#x597D;&#x7684;&#x4F18;&#x52BF;&#x3002;</li>
+<li>&#x670D;&#x52A1;&#x5BF9;&#x5916;&#x7684;&#x8BDD;&#x91C7;&#x7528;RESful API&#x4F1A;&#x6BD4;RPC&#x66F4;&#x5177;&#x6709;&#x4F18;&#x52BF;&#xFF0C;&#x56E0;&#x6B64;&#x770B;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x5546;&#x5BF9;&#x5185;&#x8FD8;&#x662F;&#x5BF9;&#x5916;</li>
+</ul>
+<p>RPC&#x7684;&#x7F16;&#x7801;&#x534F;&#x8BAE;&#xFF1A;&#x5982;&#x57FA;&#x4E8E;&#x6587;&#x672C;&#x7F16;&#x7801;&#x7684; xml&#x3001;json&#xFF0C;&#x4E5F;&#x6709;&#x4E8C;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x7684; protobuf&#x3001;binpack &#x7B49;&#x3002;</p>
+<h2 id="&#x5982;&#x4F55;&#x8C03;&#x7528;&#x4ED6;&#x4EBA;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;">&#x5982;&#x4F55;&#x8C03;&#x7528;&#x4ED6;&#x4EBA;&#x7684;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;</h2>
+<p><img src="assets/markdown-img-paste-20191217224258389.png" alt=""></p>
+<p>&#x4E0B;&#x9762;&#x662F;tcp&#x534F;&#x8BAE;&#x7684;&#x8C03;&#x7528;&#x8FC7;&#x7A0B;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x5230;TCP&#x901A;&#x8BAF;&#x7684;&#x6570;&#x636E;&#x5305;&#x7684;&#x5904;&#x7406;&#x3002;</p>
+<ul>
+<li>1&#xFF09;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x65B9;&#xFF08;client&#xFF09;&#x8C03;&#x7528;&#x4EE5;&#x672C;&#x5730;&#x8C03;&#x7528;&#x65B9;&#x5F0F;&#x8C03;&#x7528;&#x670D;&#x52A1;&#xFF1B;</li>
+<li>2&#xFF09; client stub&#x63A5;&#x6536;&#x5230;&#x8C03;&#x7528;&#x540E;&#x8D1F;&#x8D23;&#x5C06;&#x65B9;&#x6CD5;&#x3001;&#x53C2;&#x6570;&#x7B49;&#x7EC4;&#x88C5;&#xFF08;&#x6253;&#x5305;&#xFF09;&#x6210;&#x80FD;&#x591F;&#x8FDB;&#x884C;&#x7F51;&#x7EDC;&#x4F20;&#x8F93;&#x7684;&#x6D88;&#x606F;&#x4F53;&#xFF1B;</li>
+<li>3&#xFF09; client stub&#x627E;&#x5230;&#x670D;&#x52A1;&#x5730;&#x5740;&#xFF0C;&#x5E76;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x670D;&#x52A1;&#x7AEF;&#xFF1B;</li>
+<li>4&#xFF09;server stub&#x6536;&#x5230;&#x6D88;&#x606F;&#x540E;&#x8FDB;&#x884C;&#x89E3;&#x7801;&#xFF08;&#x89E3;&#x5305;&#xFF09;&#xFF1B;</li>
+<li>5&#xFF09;server stub&#x6839;&#x636E;&#x89E3;&#x7801;&#x7ED3;&#x679C;&#x8C03;&#x7528;&#x672C;&#x5730;&#x7684;&#x670D;&#x52A1;&#xFF1B;</li>
+<li>6&#xFF09;&#x672C;&#x5730;&#x670D;&#x52A1;&#x6267;&#x884C;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;server stub&#xFF1B;</li>
+<li>7&#xFF09;server stub&#x5C06;&#x8FD4;&#x56DE;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#xFF1B;</li>
+<li>8&#xFF09;client stub&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#xFF0C;&#x5E76;&#x8FDB;&#x884C;&#x89E3;&#x7801;&#xFF1B;</li>
+<li>9&#xFF09;&#x670D;&#x52A1;&#x6D88;&#x8D39;&#x65B9;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7ED3;&#x679C;&#x3002;</li>
+</ul>
+<h2 id="rpc&#x7684;-tcp&#x534F;&#x8BAE;&#x7684;&#x7B80;&#x5355;&#x5B9E;&#x73B0;">RPC&#x7684; TCP&#x534F;&#x8BAE;&#x7684;&#x7B80;&#x5355;&#x5B9E;&#x73B0;</h2>
+<blockquote>
+<p>swoole&#x7684;TCP&#x901A;&#x8BAF;</p>
+<ul>
+<li>server&#x7AEF;</li>
+</ul>
+</blockquote>
+<pre><code>&lt;?php
+
+//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5F02;&#x6B65;&#x7684;TCP&#x670D;&#x52A1;&#x7AEF;
+$ser = new swoole_server(&apos;127.0.0.1&apos;, 9501, SWOOLE_PROCESS, SWOOLE_SOCK_TCP);
+
+//&#x8BBE;&#x7F6E;&#x8FD0;&#x884C;&#x7684;&#x5404;&#x9879;&#x53C2;&#x6570;
+
+$ser-&gt;set([
+    &apos;open_length_check&apos;=&gt;true, //&#x6253;&#x5F00;&#x5305;&#x957F;&#x68C0;&#x6D4B;&#x7279;&#x6027;
+    &apos;package_length_type&apos;=&gt;&apos;N&apos;,//&#x957F;&#x5EA6;&#x503C;&#x5728;&#x5305;&#x5934;&#x7684;&#x7B2C;&#x51E0;&#x4E2A;&#x5B57;&#x8282;
+    &apos;package_length_offset&apos;=&gt;0, //&#x8BA1;&#x7B97;&#x603B;&#x957F;&#x5EA6;
+    &apos;package_body_offset&apos;=&gt;4,//&#x5305;&#x4F53;&#x4F4D;&#x7F6E;
+    &apos;package_max_length&apos;=&gt;1024*1024 //&#x603B;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x636E;&#x5927;&#x5C0F;&#x5B57;&#x8282;&#x4E3A;&#x5355;&#x4F4D;
+]);
+
+//&#x8BBE;&#x7F6E;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;
+
+$ser-&gt;on(&apos;connect&apos;, function ($ser, $fd) {
+    echo &apos;Client_&apos; . $fd . &apos;: Connect&apos;.PHP_EOL;
+});
+
+
+$ser-&gt;on(&apos;receive&apos;, function ($serv, $fd, $from_id, $data) {
+    //&#x6570;&#x636E;&#x5206;&#x5305;
+    $len = unpack(&apos;N&apos;, $data)[1];
+    $body = substr($data, -$len);  //&#x53BB;&#x9664;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;&#x4E4B;&#x540E;&#xFF0C;&#x4E0D;&#x8981;&#x5305;&#x5934;&#x7684;&#x6570;&#x636E;
+    $serv-&gt;send($fd, &apos;&#x670D;&#x52A1;&#x5668;&#x7ED9;&#x4F60;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x4E86;&apos; . $body.PHP_EOL);
+});
+
+
+$ser-&gt;on(&apos;close&apos;, function ($serv, $fd) {
+    echo &quot;Client_&quot; . $fd . &quot;: Close&quot;.PHP_EOL;
+});
+
+
+//&#x542F;&#x52A8;&#x670D;&#x52A1;&#x5668;
+$ser-&gt;start();
+</code></pre><ul>
+<li>client&#x7AEF;</li>
+</ul>
+<pre><code>&lt;?php
+
+$client = new swoole_client(SWOOLE_SOCK_TCP,SWOOLE_SOCK_ASYNC);
+
+//&#x6CE8;&#x518C;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x56DE;&#x8C03;
+$client-&gt;on(&quot;connect&quot;, function($cli) {
+//&#x6570;&#x636E;&#x6253;&#x5305;
+    $data = &apos;hello world&apos;;
+//&#x5305; = &#x5305;&#x5934;&#xFF08;length:&#x662F;&#x5305;&#x4F53;&#x7684;&#x957F;&#x5EA6;&#xFF09;+&#x5305;&#x4F53;
+    $packge = pack(&apos;N&apos;,strlen($data)).$data;
+
+    for ($i=0;$i&lt;5;$i++){
+        $cli-&gt;send($packge);
+    }
+});
+
+//&#x6CE8;&#x518C;&#x6570;&#x636E;&#x63A5;&#x6536;&#x56DE;&#x8C03;
+$client-&gt;on(&quot;receive&quot;, function($cli, $data){
+    echo &quot;Received: &quot;.$data.&apos;--END&apos;;;
+});
+
+//&#x6CE8;&#x518C;&#x8FDE;&#x63A5;&#x5931;&#x8D25;&#x56DE;&#x8C03;
+$client-&gt;on(&quot;error&quot;, function($cli){
+    echo &quot;Connect failed&quot;.PHP_EOL;
+});
+
+//&#x6CE8;&#x518C;&#x8FDE;&#x63A5;&#x5173;&#x95ED;&#x56DE;&#x8C03;
+$client-&gt;on(&quot;close&quot;, function($cli){
+    echo &quot;Connection close&quot;.PHP_EOL;;
+});
+
+//&#x53D1;&#x8D77;&#x8FDE;&#x63A5;
+$client-&gt;connect(&apos;127.0.0.1&apos;, 9501, 0.5);
+</code></pre><p>&#x5BA2;&#x6237;&#x7AEF;&#x6536;&#x5230;&#x4E86; &#x670D;&#x52A1;&#x7AEF; &#x89E3;&#x5305;&#x540E;&#x7684;&#x6570;&#x636E;
+<img src="assets/markdown-img-paste-20191219235856808.png" alt=""></p>
+<blockquote>
+<p>&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;RPC&#x529F;&#x80FD;</p>
+</blockquote>
+<p>client&#x7684;&#x6539;&#x9020;</p>
+<pre><code>&lt;?php
+class rpcclient{
+    protected  $serviceName;
+    public function __call($fname,$args)
+    {
+        if($fname == &apos;service&apos;){
+            $this-&gt;serviceName = $args;
+            return $this;
+        }
+
+        $data = [
+            &apos;serviceName&apos;=&gt;$this-&gt;serviceName,
+            &apos;method&apos;=&gt;$fname,
+            &apos;params&apos;=&gt;$args
+        ];
+
+        $data = json_encode($data);
+        $packge = pack(&apos;N&apos;,strlen($data)).$data;
+
+        //&#x540C;&#x6B65;&#x5230;tcp&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x5F02;&#x6B65;&#x7684;
+        $client = new swoole_client(SWOOLE_SOCK_TCP);
+        if(!$client-&gt;connect(&apos;127.0.0.1&apos;,9501,-1)){
+            exit(&quot;connect failed&quot;);
+        }
+        $client-&gt;send($packge);
+
+        echo $client-&gt;recv();
+        $client-&gt;close();
+    }
+}
+
+$client = new rpcclient();
+$client-&gt;service(&apos;GoodsService&apos;)-&gt;getList();
+</code></pre><p>&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#x4FDD;&#x6301;&#x4E0A;&#x9762;&#x7684;&#x4E00;&#x81F4;</p>
+<p>&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x53D7;&#x7684;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;&#x7ED9;&#x4E86;&#x5BA2;&#x6237;&#x7AEF;&#x663E;&#x793A;&#x51FA;&#x6765;&#x4E86;&#x3002;&#x5F53;&#x6211;&#x4EEC;&#x670D;&#x52A1;&#x7AEF;&#x63A5;&#x53D7;&#x5230;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x670D;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x65B9;&#x6CD5;&#xFF0C;&#x53C2;&#x6570;&#x6765;&#x8DEF;&#x7531;&#x5230;&#x5177;&#x4F53;&#x7684;server
+<img src="assets/markdown-img-paste-20191220001724142.png" alt=""></p>
+<p>&#x8FD9;&#x5C31;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#x4E86;RPC&#x7684;&#x6548;&#x679C;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x5373;&#x53EF;$client-&gt;service(&apos;GoodsService&apos;)-&gt;getList();</p>
+<h2 id="swoft&#x4E2D;&#x7684;rpc&#x4F7F;&#x7528;">swoft&#x4E2D;&#x7684;RPC&#x4F7F;&#x7528;</h2>
+<p>swoft&#x4E2D;&#x6BD2;rpc&#x4E5F;&#x5C31;&#x662F;&#x5C01;&#x88C5;swoole&#x7684;tcp&#x8BF7;&#x6C42;</p>
+<p>&#x6BD4;&#x5982;rpc&#x670D;&#x52A1;&#x7684;&#x542F;&#x52A8;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;swoole&#x7684;&#x670D;&#x52A1;
+<img src="assets/markdown-img-paste-20191220005420392.png" alt=""></p>
+<p>swoft &#x7684;tcp&#x5206;&#x4E3A;&#x670D;&#x52A1;&#x7AEF;&#x548C;&#x5BA2;&#x6237;&#x7AEF;</p>
+<blockquote>
+<p>swoft&#x7684;&#x670D;&#x52A1;&#x7AEF;</p>
+</blockquote>
+<ul>
+<li>1&#xFF1A;RPC &#x670D;&#x52A1;&#x542F;&#x52A8;&#x7684;&#x914D;&#x7F6E; &#xFF0C;&#x5728; bean.php &#x914D;&#x7F6E;RPC</li>
+</ul>
+<p>&#x4E24;&#x79CD;&#x5B9E;&#x73B0;&#xFF0C;&#x5355;&#x72EC;&#x8DD1;tcp&#x6216;&#x8005;&#x7AEF;&#x53E3;&#x591A;&#x5F00;&#x914D;&#x7F6E;
+<img src="assets/markdown-img-paste-20191220005847342.png" alt=""></p>
+<ul>
+<li>2&#xFF1A;&#x58F0;&#x660E;&#x670D;&#x52A1;</li>
+</ul>
+<p>&#x5B9A;&#x4E49;&#x63A5;&#x53E3;&#x5E76;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#xFF0C;&#x624D;&#x80FD;&#x63D0;&#x4F9B;RPC&#x670D;&#x52A1;</p>
+<p><img src="assets/markdown-img-paste-20191220010030576.png" alt=""></p>
+<p>lib&#x4E2D;&#x5B9A;&#x4E49;&#x63A5;&#x53E3;</p>
+<p>&#x670D;&#x52A1;&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x73B0;</p>
+<blockquote>
+<p>RPC&#x7684;&#x5BA2;&#x6237;&#x7AEF;</p>
+</blockquote>
+<p>&#x670D;&#x52A1;&#x8C03;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;&#x4F7F;&#x7528;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x65B9;&#x6CD5;&#xFF0C;&#x63D0;&#x4F9B;&#x7684;lib&#x63A5;&#x53E3;&#xFF0C;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x3002;</p>
+<ul>
+<li>&#x914D;&#x7F6E; &#x5B9A;&#x4E49;&#x670D;&#x52A1;</li>
+</ul>
+<p>&#x5982;&#x4E0B;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;user&#x670D;&#x52A1;</p>
+<p>&#x6CE8;&#x610F;&#x6BCF;&#x4E2A;&#x670D;&#x52A1;&#x90FD;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x6C60;&#x3002;</p>
+<pre><code>return [
+    &apos;user&apos;       =&gt; [
+        &apos;class&apos;   =&gt; ServiceClient::class,
+        &apos;host&apos;    =&gt; &apos;127.0.0.1&apos;,
+        &apos;port&apos;    =&gt; 18307,
+        &apos;setting&apos; =&gt; [
+            &apos;timeout&apos;         =&gt; 0.5,
+            &apos;connect_timeout&apos; =&gt; 1.0,
+            &apos;write_timeout&apos;   =&gt; 10.0,
+            &apos;read_timeout&apos;    =&gt; 0.5,
+        ],
+        &apos;packet&apos;  =&gt; bean(&apos;rpcClientPacket&apos;)
+    ],
+    &apos;user.pool&apos;  =&gt; [
+        &apos;class&apos;  =&gt; ServicePool::class,
+        &apos;client&apos; =&gt; bean(&apos;user&apos;)
+    ],
+];
+</code></pre><ul>
+<li>&#x670D;&#x52A1;&#x7AEF;&#x4F7F;&#x7528;</li>
+</ul>
+<p>&#x6211;&#x4EEC;&#x5728;&#x4E00;&#x4E2A;http&#x63A7;&#x5236;&#x5668;&#x4E2D;</p>
+<pre><code>/**
+ * Class RpcController
+ *
+ * @since 2.0
+ *
+ * @Controller()
+ */
+class RpcController
+{
+    /**
+     * @Reference(pool=&quot;user.pool&quot;)
+     *
+     * @var UserInterface
+     */
+    private $userService;
+
+    /**
+     * @Reference(pool=&quot;user.pool&quot;, version=&quot;1.2&quot;)
+     *
+     * @var UserInterface
+     */
+    private $userService2;
+
+    /**
+     * @RequestMapping(&quot;getList&quot;)
+     *
+     * @return array
+     */
+    public function getList(): array
+    {
+        $result  = $this-&gt;userService-&gt;getList(12, &apos;type&apos;);
+        $result2 = $this-&gt;userService2-&gt;getList(12, &apos;type&apos;);
+
+        return [$result, $result2];
+    }
+
+    /**
+     * @RequestMapping(&quot;returnBool&quot;)
+     *
+     * @return array
+     */
+    public function returnBool(): array
+    {
+        $result = $this-&gt;userService-&gt;delete(12);
+
+        if (is_bool($result)) {
+            return [&apos;bool&apos;];
+        }
+
+        return [&apos;notBool&apos;];
+    }
+
+    /**
+     * @RequestMapping()
+     *
+     * @return array
+     */
+    public function bigString(): array
+    {
+        $string = $this-&gt;userService-&gt;getBigContent();
+
+        return [&apos;string&apos;];
+    }
+}
+</code></pre><p><img src="assets/markdown-img-paste-20191220012234578.png" alt=""></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x975E;swoft&#x6846;&#x67B6;&#x4E2D;&#x8C03;&#x7528;&#x670D;&#x52A1;</p>
+<p><a href="https://www.swoft.org/docs/2.x/zh-CN/rpc-client/usage.html" target="_blank">https://www.swoft.org/docs/2.x/zh-CN/rpc-client/usage.html</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="热重载.html" class="navigation navigation-prev " aria-label="Previous page: 热重载">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="服务注册和发现.html" class="navigation navigation-next " aria-label="Next page: 服务注册和发现">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RPC通讯","level":"6.2.6","depth":2,"next":{"title":"服务注册和发现","level":"6.2.7","depth":2,"path":"swoft/服务注册和发现.md","ref":"swoft/服务注册和发现.md","articles":[]},"previous":{"title":"热重载","level":"6.2.5","depth":2,"path":"swoft/热重载.md","ref":"swoft/热重载.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["chapter-fold","back-to-top-button","expandable-chapters-small","copy-code-button","emphasize","page-treeview","page-toc-button","livereload"],"pluginsConfig":{"page-treeview":{"copyright":"Copyright © aleen42","minHeaderCount":"1","minHeaderDeep":"1"},"chapter-fold":{},"emphasize":{},"livereload":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"page-toc-button":{},"back-to-top-button":{},"expandable-chapters-small":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"swoft/RPC通讯.md","mtime":"2019-12-19T17:22:39.519Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T09:55:24.277Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapters-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-page-toc-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
