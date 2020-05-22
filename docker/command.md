@@ -29,3 +29,15 @@
  ![](assets/markdown-img-paste-20190725101043184.png)
 
  docker run -t -i --privileged centos:latest bash
+
+
+
+* 容器打成镜像
+```
+docker commit -a "hcwlsz" -m "myswoft" swoft-srv hcwlsz/myswoft:v1
+```
+OPTIONS说明：
+* -a :提交的镜像作者；
+* -c :使用Dockerfile指令来创建镜像；
+*-m :提交时的说明文字；
+* -p :在commit时，将容器暂停。
